@@ -1,0 +1,158 @@
+$amatic: 'Amatic SC', cursive;
+$monty: 'Montserrat', sans-serif;
+
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: $monty;
+}
+
+#background {
+  background-image: url('../../images/hawaiian-beach.jpg');
+  height: 100vh;
+  width: 100vw;
+  background-size: cover;
+}
+
+.nav-container {
+  max-width: 1000px;
+  margin: 0 auto;
+  ul {
+    list-style-type: none;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    li {
+      background-color: rgba(255, 255, 255, .9);
+      text-transform: uppercase;
+      padding: .5em 1.5em;
+      margin: 0 5em;
+      font-size: 1.2em;
+    }
+  }
+}
+
+.contentbox-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5em 1.5em;
+  h1 {
+    background-color: rgba(48, 151, 245, .8);
+    color: white;
+    text-transform: uppercase;
+    font-weight: normal;
+    display: inline;
+    padding: 0 .75em;
+    letter-spacing: .1em;
+    font-family: $monty;
+    font-weight: 300;
+  }
+  .contentbox {
+    min-height: 80vh;
+    min-width: 50%;
+    max-width: 1000px;
+    background-color: rgba(255, 255, 255, .85);
+  }
+}
+
+.new-item-container {
+  margin: 0 auto;
+  text-align: center;
+  h2 {
+    padding: 2em 2em 0;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-bottom: .1em solid #1e7dc1;
+    margin: 0 0 1em 0;
+    display: inline-block;
+    font-size: 1.5em;
+    letter-spacing: .05em;
+  }
+  form {
+    max-width: 60%;
+    margin: 0 auto;
+    .form-row {
+      margin: 1em 0;
+      label {
+        margin: 0 .5em;
+      }
+      input {
+        border: none;
+      }
+    }
+  }
+  button {
+    background-color: #3097f5;
+    text-transform: uppercase;
+    color: white;
+    font-size: 1.5em;
+    letter-spacing: .05em;
+    border: none;
+    padding: .5em 1.5em;
+  }
+}
+
+.calculator-container {
+  margin: 0 auto;
+  text-align: center;
+  h2 {
+    padding: 1em 1em 0;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-bottom: .05em solid #1e7dc1;
+    margin: 0 0 1em 0;
+    display: inline-block;
+    font-size: 3.5em;
+    letter-spacing: .05em;
+    font-family: $amatic;
+  }
+  .calculator-content {
+    font-weight: 300;
+    h3 {
+      font-size: 2em;
+      margin: 0;
+    }
+    .nutrition-facts {
+      ul {
+        list-style-type: none;
+        display: flex;
+        justify-content: center;
+        margin: 0;
+        li {
+          margin: 0 2em;
+        }
+      }
+    }
+    form {
+      max-width: 60%;
+      margin: 0 auto 2em;
+      .form-row {
+        margin: 1em 0;
+        label {
+          margin: 0 .5em;
+          display: inline-block;
+          text-align: right;
+        }
+        input {
+          border: none;
+        }
+      }
+    }
+    button {
+      background-color: #3097f5;
+      text-transform: uppercase;
+      color: white;
+      font-size: 1.5em;
+      letter-spacing: .25em;
+      border: none;
+      padding: .5em 1.5em;
+      font-weight: 200;
+      margin-bottom: 1.5em;
+    }
+    p {
+    }
+  }
+}
