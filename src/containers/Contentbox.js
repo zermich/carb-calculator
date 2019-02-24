@@ -21,4 +21,4 @@ class Contentbox extends Component {
   }
 }
 
-export default Contentbox
+export default Contentbox;

@@ -35,4 +35,4 @@ class NewItem extends Component {
   }
 }
 
-export default NewItem
+export default NewItem;
