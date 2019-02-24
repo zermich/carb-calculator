@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Navbar from 'Navbar';
+import Navbar from './components/Navbar';
 import Contentbox from 'Contentbox';
 
 class App extends Component {
