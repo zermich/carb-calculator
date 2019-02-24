@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
-import Contentbox from 'Contentbox';
+import Contentbox from './Contentbox';
 
 class App extends Component {
   state= {
