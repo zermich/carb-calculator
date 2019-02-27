@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import './App.css';
 
 import Contentbox from '../containers/Contentbox';
+import Navbar from '../components/Navbar';
 
 class App extends Component {
   state= {

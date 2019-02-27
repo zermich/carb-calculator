@@ -2,7 +2,9 @@ import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
 import Calculator from '../components/Calculator';
+import ItemsList from '../components/ItemsList';
 import NewItem from '../components/NewItem';
+import EditItem from '../components/EditItem';
 
 class Contentbox extends Component {
   render() {
@@ -13,7 +15,9 @@ class Contentbox extends Component {
         <Router>
           <Switch>
             <Route exact path='/' component={Calculator} />
-            <Route exact path='/new-item' component={NewItem} />
+            <Route path='/all-items' component={ItemsList} />
+            <Route path='/new-item' component={NewItem} />
+            <Route path='/edit/>:id/' component={EditItem} />
           </Switch>
         </Router>
         </div>

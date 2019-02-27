@@ -35,23 +35,23 @@ class NewItem extends Component {
         <form onSubmit={this.handleSubmit}>
           <div className='form-row'>
             <label htmlFor='item'>Item Name&#58;</label>
-            <input type='text' id='item' name='item' value={this.state.item} />
+            <input type='text' id='item' name='item' />
           </div>
           <div className='form-row'>
             <label htmlFor='tag'>Tag&#58;</label>
-            <input type='text' id='tag' name='tag' value={this.state.tag} />
+            <input type='text' id='tag' name='tag' />
           </div>
           <div className='form-row'>
             <label htmlFor='serving-size'>Serving Size&#58;</label>
-            <input type='number' id='serving-size' name='servingSize' value={this.state.servingSize} />
+            <input type='number' id='serving-size' name='servingSize' />
           </div>
           <div className='form-row'>
             <label htmlFor='calories'>Measure&#58;</label>
-            <input type='text' id='calories' name='measure' value={this.state.measure} />
+            <input type='text' id='calories' name='measure' />
           </div>
           <div className='form-row'>
             <label htmlFor='carbs'>Carbs&#58;</label>
-            <input type='number' id='carbs' name='carbs' value={this.state.carbs} />
+            <input type='number' id='carbs' name='carbs' />
           </div>
           <div className='button'>
             <button type='submit'>Add Item</button>
