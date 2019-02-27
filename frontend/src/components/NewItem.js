@@ -35,26 +35,26 @@ class NewItem extends Component {
         <form onSubmit={this.handleSubmit}>
           <div className='form-row'>
             <label htmlFor='item'>Item Name&#58;</label>
-            <input type='text' id='item' name='item' />
+            <input type='text' id='item' name='item' onChange={this.handleChange} />
           </div>
           <div className='form-row'>
             <label htmlFor='tag'>Tag&#58;</label>
-            <input type='text' id='tag' name='tag' />
+            <input type='text' id='tag' name='tag' onChange={this.handleChange} />
           </div>
           <div className='form-row'>
             <label htmlFor='serving-size'>Serving Size&#58;</label>
-            <input type='number' id='serving-size' name='servingSize' />
+            <input type='number' id='serving-size' name='servingSize' onChange={this.handleChange} />
           </div>
           <div className='form-row'>
             <label htmlFor='calories'>Measure&#58;</label>
-            <input type='text' id='calories' name='measure' />
+            <input type='text' id='calories' name='measure' onChange={this.handleChange} />
           </div>
           <div className='form-row'>
             <label htmlFor='carbs'>Carbs&#58;</label>
-            <input type='number' id='carbs' name='carbs' />
+            <input type='number' id='carbs' name='carbs' onChange={this.handleChange} />
           </div>
           <div className='button'>
-            <button type='submit'>Add Item</button>
+            <button type='submit' value='Submit'>Add Item</button>
           </div>
         </form>
       </div>

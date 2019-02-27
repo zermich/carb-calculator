@@ -14,17 +14,7 @@ class ItemService {
             carbs: data.carbs
         }, { headers })
         .then(res => {
-        if ( res !== null || undefined ) 
-        {
-            console.log(res)
-            .then( value => {
-                console.log('You have successfully sent new item data');
-                callback();
-            })
-            .catch( err => {});
-        } else {
-            console.log('post error');
-        }
+            callback();
         })
         .catch( err => {
         console.log(err);
@@ -52,7 +42,7 @@ class ItemService {
           console.error(err);
         });
     }
-    
+
 }
 
 export default ItemService;
