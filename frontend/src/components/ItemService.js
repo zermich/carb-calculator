@@ -51,9 +51,8 @@ class ItemService {
         .catch(err => {
           console.error(err);
         });
-      }
     }
-
+    
 }
 
 export default ItemService;

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 
+import ItemService from '../components/ItemService';
+
 class TableRow extends Component {
 
     constructor(props) {
@@ -12,7 +14,7 @@ class TableRow extends Component {
     handleSubmit(event) {
         event.preventDefault();
         this.addItemService.deleteData(this.props.obj._id, res => {});
-      }
+    }
 
 
   render() {
