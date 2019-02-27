@@ -30,31 +30,31 @@ class NewItem extends Component {
 
   render () {
     return (
-      <div className="new-item-container">
+      <div className='new-item-container'>
         <h2>New Item</h2>
         <form onSubmit={this.handleSubmit}>
-          <div className="form-row">
-            <label htmlFor="item">Item Name&#58;</label>
-            <input type="text" id="item" name="item" value={this.state.item} />
+          <div className='form-row'>
+            <label htmlFor='item'>Item Name&#58;</label>
+            <input type='text' id='item' name='item' value={this.state.item} />
           </div>
-          <div className="form-row">
-            <label htmlFor="tag">Tag&#58;</label>
-            <input type="text" id="tag" name="tag" value={this.state.tag} />
+          <div className='form-row'>
+            <label htmlFor='tag'>Tag&#58;</label>
+            <input type='text' id='tag' name='tag' value={this.state.tag} />
           </div>
-          <div className="form-row">
-            <label htmlFor="serving-size">Serving Size&#58;</label>
-            <input type="number" id="serving-size" name="servingSize" value={this.state.servingSize} />
+          <div className='form-row'>
+            <label htmlFor='serving-size'>Serving Size&#58;</label>
+            <input type='number' id='serving-size' name='servingSize' value={this.state.servingSize} />
           </div>
-          <div className="form-row">
-            <label htmlFor="calories">Measure&#58;</label>
-            <input type="text" id="calories" name="measure" value={this.state.measure} />
+          <div className='form-row'>
+            <label htmlFor='calories'>Measure&#58;</label>
+            <input type='text' id='calories' name='measure' value={this.state.measure} />
           </div>
-          <div className="form-row">
-            <label htmlFor="carbs">Carbs&#58;</label>
-            <input type="number" id="carbs" name="carbs" value={this.state.carbs} />
+          <div className='form-row'>
+            <label htmlFor='carbs'>Carbs&#58;</label>
+            <input type='number' id='carbs' name='carbs' value={this.state.carbs} />
           </div>
-          <div className="button">
-            <button type="submit">Add Item</button>
+          <div className='button'>
+            <button type='submit'>Add Item</button>
           </div>
         </form>
       </div>

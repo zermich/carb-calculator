@@ -6,7 +6,7 @@ class ItemService {
         const headers = {
             'Content-Type': 'application/json'
         }
-        axios.post('http://localhost:4200/user/signin/', {
+        axios.post('http://localhost:4200/items/new-item', {
             item: data.item,
             tag: data.tag,
             servingSize: data.servingSize,
