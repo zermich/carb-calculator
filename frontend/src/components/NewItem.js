@@ -31,7 +31,7 @@ class AddItem extends Component {
   render () {
     return (
       <div className='new-item-container'>
-        <h2>New Item</h2>
+        <h2 className='contentbox-header'>New Item</h2>
         <form onSubmit={this.handleSubmit}>
           <div className='form-row'>
             <label htmlFor='item'>Item Name&#58;</label>
@@ -54,7 +54,7 @@ class AddItem extends Component {
             <input type='number' id='carbs' name='carbs' onChange={this.handleChange} />
           </div>
           <div className='button'>
-            <button type='submit' value='Submit'>Add Item</button>
+            <button className='form-submit-button' type='submit' value='Submit'>Add Item</button>
           </div>
         </form>
       </div>

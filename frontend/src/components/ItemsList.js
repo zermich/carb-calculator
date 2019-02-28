@@ -36,17 +36,18 @@ class ItemsList extends Component {
     render() {
       return (
         <div>
-            <table>
-              <thead>
-                <tr>
-                  <td>Item</td>
-                  <td>Category</td>
-                </tr>
-              </thead>
-              <tbody>
-                {this.tabRow()}
-              </tbody>
-            </table>
+          <h2 className='contentbox-header'>Items</h2>
+          <table>
+            <thead>
+              <tr>
+                <td>Item</td>
+                <td>Category</td>
+              </tr>
+            </thead>
+            <tbody>
+              {this.tabRow()}
+            </tbody>
+          </table>
         </div>
       );
     }

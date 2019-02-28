@@ -45,6 +45,28 @@ body {
       padding: .5em 1.5em;
       margin: 0 .25em; }
 
+.contentbox-header {
+  padding: 1em 1em 0;
+  text-transform: uppercase;
+  font-weight: normal;
+  border-bottom: .05em solid #1e7dc1;
+  margin: 0 0 1em 0;
+  display: inline-block;
+  font-size: 3.5em;
+  letter-spacing: .05em;
+  font-family: "Amatic SC", cursive; }
+
+.form-submit-button {
+  background-color: #3097f5;
+  text-transform: uppercase;
+  color: white;
+  font-size: 1.5em;
+  letter-spacing: .25em;
+  border: none;
+  padding: .5em 1.5em;
+  font-weight: 200;
+  margin-bottom: 1.5em; }
+
 .contentbox-wrapper {
   max-width: 1000px;
   margin: 0 auto;
@@ -58,15 +80,6 @@ body {
 .new-item-container {
   margin: 0 auto;
   text-align: center; }
-  .new-item-container h2 {
-    padding: 2em 2em 0;
-    text-transform: uppercase;
-    font-weight: normal;
-    border-bottom: .1em solid #1e7dc1;
-    margin: 0 0 1em 0;
-    display: inline-block;
-    font-size: 1.5em;
-    letter-spacing: .05em; }
   .new-item-container form {
     max-width: 60%;
     margin: 0 auto; }
@@ -76,28 +89,10 @@ body {
         margin: 0 .5em; }
       .new-item-container form .form-row input {
         border: none; }
-  .new-item-container button {
-    background-color: #3097f5;
-    text-transform: uppercase;
-    color: white;
-    font-size: 1.5em;
-    letter-spacing: .05em;
-    border: none;
-    padding: .5em 1.5em; }
 
 .calculator-container {
   margin: 0 auto;
   text-align: center; }
-  .calculator-container h2 {
-    padding: 1em 1em 0;
-    text-transform: uppercase;
-    font-weight: normal;
-    border-bottom: .05em solid #1e7dc1;
-    margin: 0 0 1em 0;
-    display: inline-block;
-    font-size: 3.5em;
-    letter-spacing: .05em;
-    font-family: "Amatic SC", cursive; }
   .calculator-container .calculator-content {
     font-weight: 300; }
     .calculator-container .calculator-content h3 {
@@ -121,15 +116,5 @@ body {
           text-align: right; }
         .calculator-container .calculator-content form .form-row input {
           border: none; }
-    .calculator-container .calculator-content button {
-      background-color: #3097f5;
-      text-transform: uppercase;
-      color: white;
-      font-size: 1.5em;
-      letter-spacing: .25em;
-      border: none;
-      padding: .5em 1.5em;
-      font-weight: 200;
-      margin-bottom: 1.5em; }
 
 /*# sourceMappingURL=main.css.map */

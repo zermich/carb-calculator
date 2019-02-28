@@ -23,7 +23,7 @@ class Calculator extends Component {
   render () {
     return (
       <div className="calculator-container">
-        <h2>Calculator</h2>
+        <h2 className='contentbox-header'>Calculator</h2>
         <div className="calculator-content">
           <form>
             <div className="form-row">
@@ -40,7 +40,7 @@ class Calculator extends Component {
             </div>
           </form>
           <div className="button">
-            <button onClick={this.calculateWeight}>Calculate</button>
+            <button className='form-submit-button' onClick={this.calculateWeight}>Calculate</button>
           </div>
           <p>Ideal Weight&#58; {this.state.idealWeight}</p>
         </div>
