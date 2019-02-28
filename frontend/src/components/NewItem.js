@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ItemService from '../components/ItemService';
+import ItemService from './ItemService';
 
-class NewItem extends Component {
+class AddItem extends Component {
 
   constructor(props) {
     super(props);
@@ -62,4 +62,4 @@ class NewItem extends Component {
   }
 }
 
-export default NewItem;
+export default AddItem;
