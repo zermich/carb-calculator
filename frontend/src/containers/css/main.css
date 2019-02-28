@@ -9,37 +9,46 @@ body {
   width: 100vw;
   background-size: cover; }
 
+#title-nav {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end; }
+  #title-nav h1 {
+    background-color: rgba(48, 151, 245, 0.8);
+    color: white;
+    text-transform: uppercase;
+    font-weight: normal;
+    padding: 0 .75em;
+    letter-spacing: .1em;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    margin-bottom: 0; }
+
 .nav-container {
-  max-width: 1000px;
   margin: 0 auto; }
+  .nav-container a {
+    text-decoration: none;
+    color: black; }
+  .nav-container a:hover {
+    color: #3097f5; }
   .nav-container ul {
     list-style-type: none;
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: space-between;
     margin: 0; }
     .nav-container ul li {
-      background-color: rgba(255, 255, 255, 0.9);
+      color: black;
+      background-color: rgba(255, 255, 255, 0.85);
       text-transform: uppercase;
       padding: .5em 1.5em;
-      margin: 0 5em;
-      font-size: 1.2em; }
+      margin: 0 .25em; }
 
 .contentbox-wrapper {
   max-width: 1000px;
   margin: 0 auto;
   padding: 1.5em 1.5em; }
-  .contentbox-wrapper h1 {
-    background-color: rgba(48, 151, 245, 0.8);
-    color: white;
-    text-transform: uppercase;
-    font-weight: normal;
-    display: inline;
-    padding: 0 .75em;
-    letter-spacing: .1em;
-    font-family: "Montserrat", sans-serif;
-    font-weight: 300; }
   .contentbox-wrapper .contentbox {
     min-height: 80vh;
     min-width: 50%;
