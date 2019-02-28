@@ -22,24 +22,24 @@ class Calculator extends Component {
 
   render () {
     return (
-      <div className="calculator-container">
-        <h2 className='contentbox-header'>Calculator</h2>
-        <div className="calculator-content">
+      <div className='content-container'>
+        <h2 className='content-header'>Calculator</h2>
+        <div>
           <form>
-            <div className="form-row">
+            <div className='form-row'>
               <label>Item Serving Size (in grams):</label>
-              <input type="number" id="info-serving-size" name="item-serving-size" ref={input => this._newServing = input}/>
+              <input type='number' id='info-serving-size' name='item-serving-size' ref={input => this._newServing = input}/>
             </div>
-            <div className="form-row">
+            <div className='form-row'>
               <label>Item Carbs:</label>
-              <input type="number" id="info-carbs" name="item-carbs" ref={input => this._newCarbs = input}/>
+              <input type='number' id='info-carbs' name='item-carbs' ref={input => this._newCarbs = input}/>
             </div>
-            <div className="form-row">
+            <div className='form-row'>
               <label>Desired Carbs:</label>
-              <input type="number" id="desired-carbs" name="item-desired-carbs" ref={input => this._newDesiredCarbs = input}/>
+              <input type='number' id='desired-carbs' name='item-desired-carbs' ref={input => this._newDesiredCarbs = input}/>
             </div>
           </form>
-          <div className="button">
+          <div>
             <button className='form-submit-button' onClick={this.calculateWeight}>Calculate</button>
           </div>
           <p>Ideal Weight&#58; {this.state.idealWeight}</p>

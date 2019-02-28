@@ -9,6 +9,16 @@ body {
   width: 100vw;
   background-size: cover; }
 
+.contentbox-wrapper {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding: 1.5em 1.5em; }
+  .contentbox-wrapper .contentbox {
+    min-height: 80vh;
+    min-width: 50%;
+    max-width: 1000px;
+    background-color: rgba(255, 255, 255, 0.85); }
+
 #title-nav {
   display: flex;
   justify-content: center;
@@ -45,16 +55,30 @@ body {
       padding: .5em 1.5em;
       margin: 0 .25em; }
 
-.contentbox-header {
-  padding: 1em 1em 0;
-  text-transform: uppercase;
-  font-weight: normal;
-  border-bottom: .05em solid #1e7dc1;
-  margin: 0 0 1em 0;
-  display: inline-block;
-  font-size: 3.5em;
-  letter-spacing: .05em;
-  font-family: "Amatic SC", cursive; }
+.content-container {
+  margin: 0 auto;
+  text-align: center; }
+  .content-container .content-header {
+    padding: 1em 1em 0;
+    text-transform: uppercase;
+    font-weight: normal;
+    border-bottom: .05em solid #1e7dc1;
+    margin: 0 0 .25em 0;
+    display: inline-block;
+    font-size: 3.5em;
+    letter-spacing: .05em;
+    font-family: "Amatic SC", cursive; }
+  .content-container form {
+    max-width: 60%;
+    margin: 0 auto 2em; }
+    .content-container form .form-row {
+      margin: 1em 0; }
+      .content-container form .form-row label {
+        margin: 0 .5em;
+        display: inline-block;
+        text-align: right; }
+      .content-container form .form-row input {
+        border: none; }
 
 .form-submit-button {
   background-color: #3097f5;
@@ -66,55 +90,5 @@ body {
   padding: .5em 1.5em;
   font-weight: 200;
   margin-bottom: 1.5em; }
-
-.contentbox-wrapper {
-  max-width: 1000px;
-  margin: 0 auto;
-  padding: 1.5em 1.5em; }
-  .contentbox-wrapper .contentbox {
-    min-height: 80vh;
-    min-width: 50%;
-    max-width: 1000px;
-    background-color: rgba(255, 255, 255, 0.85); }
-
-.new-item-container {
-  margin: 0 auto;
-  text-align: center; }
-  .new-item-container form {
-    max-width: 60%;
-    margin: 0 auto; }
-    .new-item-container form .form-row {
-      margin: 1em 0; }
-      .new-item-container form .form-row label {
-        margin: 0 .5em; }
-      .new-item-container form .form-row input {
-        border: none; }
-
-.calculator-container {
-  margin: 0 auto;
-  text-align: center; }
-  .calculator-container .calculator-content {
-    font-weight: 300; }
-    .calculator-container .calculator-content h3 {
-      font-size: 2em;
-      margin: 0; }
-    .calculator-container .calculator-content .nutrition-facts ul {
-      list-style-type: none;
-      display: flex;
-      justify-content: center;
-      margin: 0; }
-      .calculator-container .calculator-content .nutrition-facts ul li {
-        margin: 0 2em; }
-    .calculator-container .calculator-content form {
-      max-width: 60%;
-      margin: 0 auto 2em; }
-      .calculator-container .calculator-content form .form-row {
-        margin: 1em 0; }
-        .calculator-container .calculator-content form .form-row label {
-          margin: 0 .5em;
-          display: inline-block;
-          text-align: right; }
-        .calculator-container .calculator-content form .form-row input {
-          border: none; }
 
 /*# sourceMappingURL=main.css.map */
