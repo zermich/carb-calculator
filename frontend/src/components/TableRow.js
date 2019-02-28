@@ -21,10 +21,10 @@ class TableRow extends Component {
     return (
         <tr>
           <td>
-            {this.props.obj._id}
+            {this.props.obj.item}
           </td>
           <td>
-            {this.props.obj.item}
+            {this.props.obj.tag}
           </td>
           <td>
             <button><Link to={`/edit/${this.props.obj._id}`}>Edit</Link></button>

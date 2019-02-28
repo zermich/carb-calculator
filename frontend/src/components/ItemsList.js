@@ -39,8 +39,8 @@ class ItemsList extends Component {
             <table>
               <thead>
                 <tr>
-                  <td>No.</td>
                   <td>Item</td>
+                  <td>Category</td>
                 </tr>
               </thead>
               <tbody>
