@@ -113,3 +113,15 @@ body {
       font-weight: 200;
       margin-bottom: 1.5em;
 }
+
+.items-table {
+  margin: 0 auto;
+  text-align: left;
+  thead {
+    font-size: 1.15em;
+    text-transform: uppercase;
+  }
+  tbody {
+    font-weight: 300;
+  }
+}

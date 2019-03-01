@@ -91,4 +91,13 @@ body {
   font-weight: 200;
   margin-bottom: 1.5em; }
 
+.items-table {
+  margin: 0 auto;
+  text-align: left; }
+  .items-table thead {
+    font-size: 1.15em;
+    text-transform: uppercase; }
+  .items-table tbody {
+    font-weight: 300; }
+
 /*# sourceMappingURL=main.css.map */

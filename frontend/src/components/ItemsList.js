@@ -35,9 +35,9 @@ class ItemsList extends Component {
 
     render() {
       return (
-        <div>
-          <h2 className='contentbox-header'>Items</h2>
-          <table>
+        <div className='content-container'>
+          <h2 className='content-header'>Items</h2>
+          <table className='items-table'>
             <thead>
               <tr>
                 <td>Item</td>
