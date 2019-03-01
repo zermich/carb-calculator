@@ -99,5 +99,7 @@ body {
     text-transform: uppercase; }
   .items-table tbody {
     font-weight: 300; }
+    .items-table tbody td {
+      border-bottom: .15em dotted #3097f5; }
 
 /*# sourceMappingURL=main.css.map */

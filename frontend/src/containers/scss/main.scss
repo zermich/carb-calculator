@@ -123,5 +123,8 @@ body {
   }
   tbody {
     font-weight: 300;
+    td {
+      border-bottom: .15em dotted #3097f5;
+    }
   }
 }
