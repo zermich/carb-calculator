@@ -30,9 +30,10 @@ class TableRow extends Component {
             <button><Link to={`/edit/${this.props.obj._id}`}>Edit</Link></button>
           </td>
           <td>
-          <form onSubmit={this.handleSubmit}>
+          {/* <form onSubmit={this.handleSubmit}>
             <input type='submit' value='Delete'/>
-          </form>
+          </form> */}
+            <button onClick={this.handleSubmit}>Delete</button>
           </td>
         </tr>
     );
