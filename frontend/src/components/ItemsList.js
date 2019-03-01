@@ -9,8 +9,7 @@ class ItemsList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: '',
-            sortBy: ''
+            items: ''
         };
         this.addItemService = new ItemService();
     }
@@ -19,15 +18,12 @@ class ItemsList extends Component {
     componentDidMount(){
         axios.get('http://localhost:4200/items')
         .then( response => {
-            this.setState({ items: response.data });
-            console.log('Original data is', response.data);
-            // const itemsSort = response.data.sort((a, b) => {
-            //   let textA = a.item.toLowerCase();
-            //   let textB = b.item.toLowerCase();
-            //   return (textA < textB) ? -1 : (textA > textB) ? 1: 0;
-            // });
-            // console.log('sorted data is', itemsSort);
-            
+            const itemsSort = response.data.sort((a, b) => {
+              let textA = a.item.toLowerCase();
+              let textB = b.item.toLowerCase();
+              return (textA < textB) ? -1 : (textA > textB) ? 1: 0;
+            });
+            this.setState({ items: itemsSort });
         })
         .catch( error => {
             console.log(error);
