@@ -3,11 +3,24 @@ const router = express.Router();
 
 // Require Item model in our routes module
 const Item = require('../models/Item');
+const MenuItem = require('../models/MenuItem');
 
 // Defined store route
 router.post('/new-item', (req, res) => {
   const item = new Item(req.body);
       item.save()
+    .then(item => {
+        res.json('Item added successfully');
+    })
+    .catch(err => {
+        res.status(400).send("unable to save to database");
+    });
+});
+
+// Defined menu-item store route
+router.post('/menu-items', (req, res) => {
+  const menu_item = new MenuItem(req.body);
+      menu_item.save()
     .then(item => {
         res.json('Item added successfully');
     })

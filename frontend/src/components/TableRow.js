@@ -9,6 +9,12 @@ class TableRow extends Component {
         super(props);
         this.addItemService = new ItemService();
         this.handleSubmit = this.handleSubmit.bind(this);
+        this.handlePlus = this.handlePlus.bind(this);
+    }
+
+    handlePlus(event) {
+      event.preventDefault();
+        this.addItemService.addItemToMenu(this.props.obj, res => {});
     }
 
     handleSubmit(event) {
@@ -27,6 +33,9 @@ class TableRow extends Component {
             {this.props.obj.tag}
           </td>
           <td>
+          <td>
+            <button onClick={this.handlePlus}>+</button>
+          </td>
             <button><Link to={`/edit/${this.props.obj._id}`}>Edit</Link></button>
           </td>
           <td>
