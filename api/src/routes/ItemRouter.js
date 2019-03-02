@@ -29,6 +29,20 @@ router.post('/menu-items', (req, res) => {
     });
 });
 
+// Defined get data menu items route
+router.get('/menu-items', (req, res) => {
+  MenuItem.find((err, items) => {
+    if(err){
+      console.log(err);
+    }
+    else {
+      console.log(items);
+      res.json(items);
+    }
+  });
+});
+
+
 // Defined get data(index or listing) route
 router.get('/', (req, res) => {
   Item.find((err, items) => {

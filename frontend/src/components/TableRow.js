@@ -33,9 +33,9 @@ class TableRow extends Component {
             {this.props.obj.tag}
           </td>
           <td>
-          <td>
             <button onClick={this.handlePlus}>+</button>
           </td>
+          <td>
             <button><Link to={`/edit/${this.props.obj._id}`}>Edit</Link></button>
           </td>
           <td>

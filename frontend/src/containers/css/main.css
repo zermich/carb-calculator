@@ -102,4 +102,11 @@ body {
     .items-table tbody td {
       border-bottom: .15em dotted #3097f5; }
 
+.menu-item {
+  background-color: rgba(48, 151, 245, 0.6);
+  padding: .25em 0;
+  max-width: 65%;
+  margin: 0 auto;
+  margin-bottom: 1em; }
+
 /*# sourceMappingURL=main.css.map */

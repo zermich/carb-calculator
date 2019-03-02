@@ -1,14 +1,36 @@
 import React, { Component } from 'react';
 import ItemService from './ItemService';
+import axios from 'axios';
 
 import MiniCalculator from '../components/MiniCalculator';
+import MenuItem from '../components/MenuItem';
 
 class Menu extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         this.state = {
-            carbsDesired: 0
+            items: ''
+        };
+        this.addItemService = new ItemService();
+    }
+
+
+    componentDidMount(){
+        axios.get('http://localhost:4200/items/menu-items')
+        .then( response => {
+            this.setState({ items: response.data });
+        })
+        .catch( error => {
+            console.log(error);
+        });
+    }
+
+    tabRow(){
+        if(this.state.items instanceof Array){
+            return this.state.items.map( (object, i) => {
+                return <MenuItem obj={object} key={i} />;
+            });
         }
     }
 
@@ -22,7 +44,7 @@ class Menu extends Component {
                         <input type='number' id='carbsDesired' name='carbsDesired' onChange={this.handleChange} />
                     </div>
                 </form>
-                <MiniCalculator />
+                {this.tabRow()}
             </div>
         )
     }
