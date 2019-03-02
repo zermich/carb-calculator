@@ -36,7 +36,6 @@ router.get('/menu-items', (req, res) => {
       console.log(err);
     }
     else {
-      console.log(items);
       res.json(items);
     }
   });

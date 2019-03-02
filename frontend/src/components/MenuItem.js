@@ -10,8 +10,8 @@ class MenuItem extends Component {
   }
 
   calculateWeight() {
-    let y = this._newServing.value;
-    let z = this._newCarbs.value;
+    let y = this.props.obj.servingSize;
+    let z = this.props.obj.carbs;
     let x = this._newDesiredCarbs.value;
     let n = ((y*x)/z).toFixed(2);
     this.setState ({
@@ -33,7 +33,7 @@ class MenuItem extends Component {
         <div>
           <button className='form-submit-button' onClick={this.calculateWeight}>Calculate</button>
         </div>
-        <p>Ideal Weight&#58; {this.state.idealWeight}</p>
+        <p>Ideal Weight&#58; {this.state.idealWeight} {this.state.measure}</p>
 
       </div>
     )
