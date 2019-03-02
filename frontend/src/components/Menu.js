@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import ItemService from './ItemService';
 import axios from 'axios';
 
-import MiniCalculator from '../components/MiniCalculator';
 import MenuItem from '../components/MenuItem';
 
 class Menu extends Component {
