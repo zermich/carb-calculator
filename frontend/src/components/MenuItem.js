@@ -4,9 +4,19 @@ class MenuItem extends Component {
   constructor(props) {
     super(props);
     this.state = {
+      itemCarbsDesired: 0,
       idealWeight: 'Pending Calculation'
     }
+    this.handleChange = this.handleChange.bind(this);
     this.calculateWeight = this.calculateWeight.bind(this);
+  }
+
+  handleChange(e) {
+    e.preventDefault();
+    let myNum = e.target.value;
+    this.setState({
+      itemCarbsDesired: parseInt(myNum)
+    })
   }
 
   calculateWeight() {
@@ -16,7 +26,8 @@ class MenuItem extends Component {
     let n = ((y*x)/z).toFixed(2);
     this.setState ({
        idealWeight: `${n}g`
-     });
+    });
+    this.props.onChange(this.state.itemCarbsDesired);
   }
 
 
@@ -27,7 +38,7 @@ class MenuItem extends Component {
         <form>
           <div className='form-row'>
             <label>Item Carbs Desired:</label>
-            <input type='number' id='desired-carbs' name='item-desired-carbs' ref={input => this._newDesiredCarbs = input}/>
+            <input type='number' id='desired-carbs' name='item-desired-carbs' ref={input => this._newDesiredCarbs = input} onChange={this.handleChange} />
           </div>
         </form>
         <div>
