@@ -58,12 +58,11 @@ class Menu extends Component {
         return (
             <div className='content-container'>
                 <h2 className='content-header'>Menu</h2>
-                <div>
+                <div id='total-carbs-desired-form'>
                     Total Carbs Desired&#58; 
                     <input type='number' id='carbsDesired' name='carbsDesired' onChange={this.handleChangeCarbsDesired}/>
                 </div> 
                 {this.tabRow()}
-                <h3>Current Carb Count is {this.state.totalItemCarbs}</h3>
                 <h3>Total Carbs Remaining: {this.state.carbsRemaining}</h3>
             </div>
         )

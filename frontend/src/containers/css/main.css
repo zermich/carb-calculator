@@ -5,7 +5,7 @@ body {
 
 #background {
   background-image: url("../../images/hawaiian-beach.jpg");
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
   background-size: cover; }
 
@@ -102,11 +102,23 @@ body {
     .items-table tbody td {
       border-bottom: .15em dotted #3097f5; }
 
+#total-carbs-desired-form {
+  margin: .75em 0; }
+
 .menu-item {
-  background-color: rgba(48, 151, 245, 0.6);
   padding: .25em 0;
   max-width: 65%;
   margin: 0 auto;
-  margin-bottom: 1em; }
+  margin-bottom: 1em;
+  font-size: .85em; }
+  .menu-item form {
+    margin-bottom: .65em; }
+    .menu-item form .form-row {
+      margin: 0; }
+  .menu-item button {
+    font-size: 1em;
+    margin-bottom: .5em; }
+  .menu-item p {
+    margin-top: .15em; }
 
 /*# sourceMappingURL=main.css.map */

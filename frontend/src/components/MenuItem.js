@@ -19,6 +19,8 @@ class MenuItem extends Component {
     })
   }
 
+  
+
   calculateWeight() {
     let y = this.props.obj.servingSize;
     let z = this.props.obj.carbs;
@@ -32,8 +34,17 @@ class MenuItem extends Component {
 
 
   render () {
+    const handleBackgroundColor = a => { 
+      switch(a){   
+          case 'protein': return "rgba(255, 0, 0, .6)";
+          case 'fruit': return "rgba(255, 255, 0, .6)";
+          case 'vegetable': return "rgba(0, 128, 0, .6)";
+          case 'misc': return "rgba(48, 151, 245, .6)";
+          default: return "rgba(48, 151, 245, .6)";      
+      }
+    }
     return (
-      <div className='menu-item'>
+      <div className='menu-item' style={{background: handleBackgroundColor(this.props.obj.tag)}} >
         <h2>{this.props.obj.tag}: {this.props.obj.item}</h2>
         <form>
           <div className='form-row'>
