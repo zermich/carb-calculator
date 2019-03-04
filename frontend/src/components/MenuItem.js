@@ -13,9 +13,9 @@ class MenuItem extends Component {
 
   handleChange(e) {
     e.preventDefault();
-    let myNum = e.target.value;
+    let myNum = parseInt(e.target.value);
     this.setState({
-      itemCarbsDesired: parseInt(myNum)
+      itemCarbsDesired: myNum
     })
   }
 
