@@ -8,6 +8,7 @@ class Navbar extends Component {
           <ul>
             <li><Link to="/new-item">Add Item</Link></li>
             <li><Link to="/all-items">Items</Link></li>
+            <li><Link to="/menu">Menu</Link></li>
             <li><Link to="/">Calculator</Link></li>
           </ul>
         </div>
