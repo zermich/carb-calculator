@@ -117,7 +117,8 @@ body {
       margin: 0; }
   .menu-item button {
     font-size: 1em;
-    margin-bottom: .5em; }
+    margin-bottom: .5em;
+    background-color: rgba(0, 0, 0, 0.8); }
   .menu-item p {
     margin-top: .15em; }
 
