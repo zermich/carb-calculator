@@ -35,7 +35,8 @@ class Menu extends Component {
         e.preventDefault();
         let myNum = e.target.value;
         this.setState({
-          carbsDesired: parseInt(myNum)
+          carbsDesired: parseInt(myNum),
+          carbsRemaining: (parseInt(myNum) - this.state.totalItemCarbs)
         })
       }
 
