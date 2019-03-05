@@ -63,6 +63,17 @@ class ItemService {
         });
     }
 
+    deleteMenuData(id, successCallback) {
+        return axios.delete('http://localhost:4200/items/menu-items/'+id)
+        .then(res => {
+          console.debug('success');
+          successCallback(res);
+        })
+        .catch(err => {
+          console.error(err);
+        });
+    }
+
 }
 
 export default ItemService;

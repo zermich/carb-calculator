@@ -31,6 +31,7 @@ router.post('/menu-items', (req, res) => {
 
 // Defined get data menu items route
 router.get('/menu-items', (req, res) => {
+  console.log('menu items pinged');
   MenuItem.find((err, items) => {
     if(err){
       console.log(err);
@@ -88,6 +89,18 @@ router.delete('/:id', (req, res) => {
         if(err) res.json(err);
         else res.json('Successfully removed');
     });
+});
+
+// Defined menu delete | remove | destroy route
+router.delete('/menu-items/:id', (req, res) => {
+  MenuItem.findOneAndDelete({_id: req.params.id},
+       function(err, item){
+        if(err) res.json(err);
+        else res.json('Successfully removed');
+  })
+  .then(res => {
+    console.log('success');
+  })  ;
 });
 
 module.exports = router;

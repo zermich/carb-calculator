@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ItemService from '../components/ItemService';
 
 class MenuItem extends Component {
   constructor(props) {
@@ -7,8 +8,16 @@ class MenuItem extends Component {
       itemCarbsDesired: 0,
       idealWeight: 'Pending Calculation'
     }
+    this.addItemService = new ItemService();
     this.handleChange = this.handleChange.bind(this);
     this.calculateWeight = this.calculateWeight.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
+  }
+
+  handleDelete(e) {
+    e.preventDefault();
+    this.addItemService.deleteMenuData(this.props.obj._id, res => {});
+    this.props.onDelete();
   }
 
   handleChange(e) {
@@ -33,6 +42,7 @@ class MenuItem extends Component {
   }
 
 
+
   render () {
     const handleBackgroundColor = a => { 
       switch(a){   
@@ -45,6 +55,9 @@ class MenuItem extends Component {
     }
     return (
       <div className='menu-item' style={{background: handleBackgroundColor(this.props.obj.tag)}} >
+        <div>
+          <button className='form-submit-button' onClick={this.handleDelete}>Remove from Menu</button>
+        </div>
         <h2>{this.props.obj.tag}: {this.props.obj.item}</h2>
         <form>
           <div className='form-row'>
