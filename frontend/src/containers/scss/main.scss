@@ -155,3 +155,8 @@ body {
     margin-top: .15em;
   }
 }
+
+
+.add-menu-item-button::active {
+  background-color: blue;
+}

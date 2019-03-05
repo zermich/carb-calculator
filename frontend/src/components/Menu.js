@@ -16,6 +16,7 @@ class Menu extends Component {
         };
         this.handleChange = this.handleChange.bind(this);
         this.handleChangeCarbsDesired = this.handleChangeCarbsDesired.bind(this);
+        this.handleDelete = this.handleDelete.bind(this);
         this.addItemService = new ItemService();
     }
 
@@ -46,10 +47,20 @@ class Menu extends Component {
         });
     }
 
+    handleDelete(){
+        axios.get('http://localhost:4200/items/menu-items')
+        .then( response => {
+            this.setState({ items: response.data });
+        })
+        .catch( error => {
+            console.log(error);
+        });
+    };
+
     tabRow(){
         if(this.state.items instanceof Array){
             return this.state.items.map( (object, i) => {
-                return <MenuItem obj={object} key={i} onChange={this.handleChange}/>;
+                return <MenuItem obj={object} key={i} onChange={this.handleChange} onDelete={this.handleDelete} />;
             });
         }
     }
