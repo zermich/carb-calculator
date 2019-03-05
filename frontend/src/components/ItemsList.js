@@ -9,25 +9,32 @@ class ItemsList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: ''
+            items: '',
+            sortBy: ''
         };
         this.addItemService = new ItemService();
+        this.handleSort = this.handleSort.bind(this);
     }
 
-
     componentDidMount(){
-        axios.get('http://localhost:4200/items')
-        .then( response => {
-            const itemsSort = response.data.sort((a, b) => {
-              let textA = a.item.toLowerCase();
-              let textB = b.item.toLowerCase();
-              return (textA < textB) ? -1 : (textA > textB) ? 1: 0;
-            });
-            this.setState({ items: itemsSort });
-        })
-        .catch( error => {
-            console.log(error);
+      axios.get('http://localhost:4200/items')
+      .then( response => {
+          this.setState({ items: response.data });
+      })
+      .catch( error => {
+          console.log(error);
+      });
+  }
+
+    handleSort(e) {
+        const sortBy = e.target.name;
+        const itemsSort = this.state.items.sort((a, b) => {
+          let textA = a[sortBy].toLowerCase();
+          let textB = b[sortBy].toLowerCase();
+          return (textA < textB) ? -1 : (textA > textB) ? 1: 0;
         });
+        this.setState({ items: itemsSort });
+      
     }
 
     tabRow(){
@@ -45,8 +52,10 @@ class ItemsList extends Component {
           <table className='items-table'>
             <thead>
               <tr>
-                <td>Item</td>
-                <td>Category</td>
+                <td><button onClick={this.handleSort} name='item'>Item</button></td>
+                <td><button onClick={this.handleSort} name='tag'>Category</button></td>
+                {/* <td>Item</td>
+                <td>Category</td> */}
               </tr>
             </thead>
             <tbody>
