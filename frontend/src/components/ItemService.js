@@ -53,6 +53,12 @@ class ItemService {
         });
     }
 
+    updateMenuItemData(id) {
+        return axios.put('http://localhost:4200/items/add-menu-item/'+id, {
+            menuItem: true
+        });
+    }
+
     filterData(tag) {
         return axios.get('http://localhost:4200/items/'+tag,  { 'Content-Type': 'application/json' })
         .catch( error => {

@@ -17,6 +17,10 @@ var Item = new Schema({
   },
   carbs: {
     type: Number
+  },
+  menuItem: {
+    type: Boolean,
+    default: false
   }
 },
 {

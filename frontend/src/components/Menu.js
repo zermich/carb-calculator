@@ -25,6 +25,7 @@ class Menu extends Component {
         axios.get('http://localhost:4200/items/menu-items')
         .then( response => {
             this.setState({ items: response.data });
+            // console.log(response.data);
         })
         .catch( error => {
             console.log(error);

@@ -30,9 +30,20 @@ router.post('/menu-items', (req, res) => {
 });
 
 // Defined get data menu items route
+// router.get('/menu-items', (req, res) => {
+//   console.log('menu items pinged');
+//   MenuItem.find((err, items) => {
+//     if(err){
+//       console.log(err);
+//     }
+//     else {
+//       res.json(items);
+//     }
+//   });
+// });
+
 router.get('/menu-items', (req, res) => {
-  console.log('menu items pinged');
-  MenuItem.find((err, items) => {
+  Item.find({ 'menuItem': true }, (err, items) => {
     if(err){
       console.log(err);
     }
@@ -41,7 +52,6 @@ router.get('/menu-items', (req, res) => {
     }
   });
 });
-
 
 // Defined get data(index or listing) route
 router.get('/', (req, res) => {
@@ -93,6 +103,28 @@ router.put('/:id', (req, res) => {
             res.status(400).send("unable to update the database");
       });
     }
+  });
+});
+
+// Add Item to Menu
+//  Defined update route
+router.put('/add-menu-item/:id', (req, res) => {
+  Item.findById(req.params.id, (err, item) => {
+    if (!item)
+      return next(new Error('Could not load Document'));
+    else {
+      // do your updates here
+      item.menuItem = req.body.menuItem;
+
+      item.save().then(item => {
+          // res.json('Update complete', item);
+          res.json(item);
+      })
+      // .catch(err => {
+      //       res.status(400).send("unable to update the database");
+      // });
+    }
+    
   });
 });
 
