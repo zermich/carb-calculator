@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import ItemService from '../components/ItemService';
 import axios from 'axios';
 
+import ItemService from '../components/ItemService';
 import TableRow from '../components/TableRow';
+
 
 class ItemsList extends Component {
 
@@ -18,7 +19,8 @@ class ItemsList extends Component {
     }
 
     componentDidMount(){
-      axios.get('http://localhost:4200/items')
+      // axios.get('http://localhost:4200/items')
+      this.addItemService.fetchAllItems()
       .then( response => {
           this.setState({ items: response.data });
       })
@@ -39,13 +41,23 @@ class ItemsList extends Component {
 
     handleFilter(event){
       event.preventDefault();
-      this.addItemService.filterData('protein')
-      .then((res) => {
-        this.setState({ items: res.data });
-      })
-      .catch( err => {
-          console.log(err);
-      });
+      if(event.target.value === 'category'){
+        this.addItemService.fetchAllItems()
+        .then( response => {
+            this.setState({ items: response.data });
+        })
+        .catch( error => {
+            console.log(error);
+        });
+      } else {
+        this.addItemService.filterData(event.target.value)
+        .then((res) => {
+          this.setState({ items: res.data });
+        })
+        .catch( err => {
+            console.log(err);
+        });
+      }
     }
 
     tabRow(){
@@ -64,7 +76,16 @@ class ItemsList extends Component {
             <thead>
               <tr>
                 <td><button onClick={this.handleSort} name='item'>Item</button></td>
-                <td><button onClick={this.handleFilter} name='tag'>Category</button></td>
+                {/* <td><button onClick={this.handleFilter} name='tag'>Category</button></td> */}
+                <td>
+                  <select name='tag' placeholder='Category' onChange={this.handleFilter}>
+                    <option default value='category'>Category</option>
+                    <option value='fruit'>Fruit</option>
+                    <option value='protein'>Protein</option>
+                    <option value='vegetable'>Vegetable</option>
+                    <option value='dessert'>Dessert</option>
+                  </select>
+                </td>
               </tr>
             </thead>
             <tbody>

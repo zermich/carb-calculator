@@ -2,17 +2,21 @@ import axios from 'axios';
 
 class ItemService {
 
+    fetchAllItems() {
+        return axios.get('http://localhost:4200/items')
+        .catch( error => {
+            console.log(error);
+        });
+    }
+
     sendNewItemData(data, callback) {
-        const headers = {
-            'Content-Type': 'application/json'
-        }
-        axios.post('http://localhost:4200/items/new-item', {
+        return axios.post('http://localhost:4200/items/new-item', {
             item: data.item,
             tag: data.tag,
             servingSize: data.servingSize,
             measure: data.measure,
             carbs: data.carbs
-        }, { headers })
+        }, { 'Content-Type': 'application/json' })
         .then(res => {
             callback();
         })
@@ -23,16 +27,13 @@ class ItemService {
     
     //Sends Item info to menu-items db collection on ItemsList item plus click
     addItemToMenu(data, callback) {
-        const headers = {
-            'Content-Type': 'application/json'
-        }
         return axios.post('http://localhost:4200/items/menu-items', {
             item: data.item,
             tag: data.tag,
             servingSize: data.servingSize,
             measure: data.measure,
             carbs: data.carbs
-        }, { headers })
+        }, { 'Content-Type': 'application/json' })
         .then(res => {
             callback();
         })
@@ -52,17 +53,11 @@ class ItemService {
         });
     }
 
-    filterData(tag, callback) {
-        const headers = {
-            'Content-Type': 'application/json'
-        }
-        return axios.get('http://localhost:4200/items/'+tag,  { headers })
-            // .then( response => {
-            //     this.setState({ items: response.data });
-            // })
-            .catch( error => {
-                console.log(error);
-            });
+    filterData(tag) {
+        return axios.get('http://localhost:4200/items/'+tag,  { 'Content-Type': 'application/json' })
+        .catch( error => {
+            console.log(error);
+        });
     }
 
     deleteData(id, successCallback) {
