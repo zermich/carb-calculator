@@ -52,6 +52,19 @@ class ItemService {
         });
     }
 
+    filterData(tag, callback) {
+        const headers = {
+            'Content-Type': 'application/json'
+        }
+        return axios.get('http://localhost:4200/items/'+tag,  { headers })
+            // .then( response => {
+            //     this.setState({ items: response.data });
+            // })
+            .catch( error => {
+                console.log(error);
+            });
+    }
+
     deleteData(id, successCallback) {
         return axios.delete('http://localhost:4200/items/'+id)
         .then(res => {

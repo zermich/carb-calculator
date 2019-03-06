@@ -55,6 +55,20 @@ router.get('/', (req, res) => {
   });
 });
 
+// ItemsList page filter query
+router.get('/:tag', (req, res) => {
+  const tagValue = req.params.tag;
+  console.log(tagValue);
+  Item.find({ tag: tagValue }, (err, items) => {
+    if(err){
+      console.log(err);
+    }
+    else {
+      res.json(items);
+    }
+  });
+});
+
 // Defined edit route
 router.get('/:id', (req, res) => {
   const id = req.params.id;

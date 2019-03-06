@@ -14,6 +14,7 @@ class ItemsList extends Component {
         };
         this.addItemService = new ItemService();
         this.handleSort = this.handleSort.bind(this);
+        this.handleFilter = this.handleFilter.bind(this);
     }
 
     componentDidMount(){
@@ -27,14 +28,24 @@ class ItemsList extends Component {
   }
 
     handleSort(e) {
-        const sortBy = e.target.name;
-        const itemsSort = this.state.items.sort((a, b) => {
-          let textA = a[sortBy].toLowerCase();
-          let textB = b[sortBy].toLowerCase();
-          return (textA < textB) ? -1 : (textA > textB) ? 1: 0;
-        });
-        this.setState({ items: itemsSort });
-      
+      const sortBy = e.target.name;
+      const itemsSort = this.state.items.sort((a, b) => {
+        let textA = a[sortBy].toLowerCase();
+        let textB = b[sortBy].toLowerCase();
+        return (textA < textB) ? -1 : (textA > textB) ? 1: 0;
+      });
+      this.setState({ items: itemsSort });
+    }
+
+    handleFilter(event){
+      event.preventDefault();
+      this.addItemService.filterData('protein')
+      .then((res) => {
+        this.setState({ items: res.data });
+      })
+      .catch( err => {
+          console.log(err);
+      });
     }
 
     tabRow(){
@@ -53,9 +64,7 @@ class ItemsList extends Component {
             <thead>
               <tr>
                 <td><button onClick={this.handleSort} name='item'>Item</button></td>
-                <td><button onClick={this.handleSort} name='tag'>Category</button></td>
-                {/* <td>Item</td>
-                <td>Category</td> */}
+                <td><button onClick={this.handleFilter} name='tag'>Category</button></td>
               </tr>
             </thead>
             <tbody>
