@@ -16,8 +16,7 @@ class MenuItem extends Component {
 
   handleDelete(e) {
     e.preventDefault();
-    this.addItemService.deleteMenuData(this.props.obj._id, res => {});
-    this.props.onDelete();
+    this.addItemService.updateMenuItemData(this.props.obj._id, false, res => {  this.props.onDelete(); });
   }
 
   handleChange(e) {

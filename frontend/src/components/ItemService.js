@@ -53,10 +53,14 @@ class ItemService {
         });
     }
 
-    updateMenuItemData(id) {
+    updateMenuItemData(id, menuBoolean, successCallback) {
         return axios.put('http://localhost:4200/items/add-menu-item/'+id, {
-            menuItem: true
-        });
+            menuItem: menuBoolean
+        })
+        .then( res => {
+            successCallback(res);
+        })
+        ;
     }
 
     filterData(tag) {
