@@ -6,7 +6,7 @@ class Navbar extends Component {
     return (
         <div className="nav-container">
           <ul>
-            <li><Link to="/new-item">Add Item</Link></li>
+            <li><Link to="/new-item">New Item</Link></li>
             <li><Link to="/all-items">Items</Link></li>
             <li><Link to="/menu">Menu</Link></li>
             <li><Link to="/">Calculator</Link></li>
