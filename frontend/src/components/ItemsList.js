@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 import ItemService from '../components/ItemService';
 import TableRow from '../components/TableRow';
@@ -11,7 +10,8 @@ class ItemsList extends Component {
         super(props);
         this.state = {
             items: '',
-            sortBy: ''
+            sortBy: '',
+            visibleItems: []
         };
         this.addItemService = new ItemService();
         this.handleSort = this.handleSort.bind(this);
@@ -19,10 +19,9 @@ class ItemsList extends Component {
     }
 
     componentDidMount(){
-      // axios.get('http://localhost:4200/items')
       this.addItemService.fetchAllItems()
       .then( response => {
-          this.setState({ items: response.data });
+          this.setState({ items: response.data, visibleItems: response.data });
       })
       .catch( error => {
           console.log(error);
@@ -41,28 +40,25 @@ class ItemsList extends Component {
 
     handleFilter(event){
       event.preventDefault();
-      if(event.target.value === 'category'){
-        this.addItemService.fetchAllItems()
-        .then( response => {
-            this.setState({ items: response.data });
-        })
-        .catch( error => {
-            console.log(error);
-        });
+      const filterValue = event.target.value;
+      const itemsList = this.state.items;
+      const visibleItemsList = [];
+      itemsList.forEach( obj => {
+        if(obj.tag === filterValue) {
+          visibleItemsList.push(obj);
+          console.log(visibleItemsList);
+        }
+      });
+      if(filterValue === 'category') {
+        this.setState({ visibleItems: this.state.items });
       } else {
-        this.addItemService.filterData(event.target.value)
-        .then((res) => {
-          this.setState({ items: res.data });
-        })
-        .catch( err => {
-            console.log(err);
-        });
+        this.setState({ visibleItems: visibleItemsList });
       }
     }
 
     tabRow(){
         if(this.state.items instanceof Array){
-            return this.state.items.map( (object, i) => {
+            return this.state.visibleItems.map( (object, i) => {
                 return <TableRow obj={object} key={i} />;
             });
         }
@@ -79,7 +75,7 @@ class ItemsList extends Component {
                 {/* <td><button onClick={this.handleFilter} name='tag'>Category</button></td> */}
                 <td>
                   <select name='tag' placeholder='Category' onChange={this.handleFilter}>
-                    <option default value='category'>Category</option>
+                    <option default value='category'>All Categories</option>
                     <option value='fruit'>Fruit</option>
                     <option value='protein'>Protein</option>
                     <option value='vegetable'>Vegetable</option>
