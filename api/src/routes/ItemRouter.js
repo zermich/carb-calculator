@@ -5,7 +5,31 @@ const router = express.Router();
 const Item = require('../models/Item');
 const MenuItem = require('../models/MenuItem');
 
-// Defined store route
+// Returns all items from db item collection
+router.get('/', (req, res) => {
+  Item.find((err, items) => {
+    if(err){
+      console.log(err);
+    }
+    else {
+      res.json(items);
+    }
+  });
+});
+
+// Returns all items from db item collection with menuItem: true
+router.get('/menu-items', (req, res) => {
+  Item.find({ 'menuItem': true }, (err, items) => {
+    if(err){
+      console.log(err);
+    }
+    else {
+      res.json(items);
+    }
+  });
+});
+
+// Saves new item to db item collection with Item schema
 router.post('/new-item', (req, res) => {
   const item = new Item(req.body);
       item.save()
@@ -18,16 +42,16 @@ router.post('/new-item', (req, res) => {
 });
 
 // Defined menu-item store route
-router.post('/menu-items', (req, res) => {
-  const menu_item = new MenuItem(req.body);
-      menu_item.save()
-    .then(item => {
-        res.json('Item added successfully');
-    })
-    .catch(err => {
-        res.status(400).send("unable to save to database");
-    });
-});
+// router.post('/menu-items', (req, res) => {
+//   const menu_item = new MenuItem(req.body);
+//       menu_item.save()
+//     .then(item => {
+//         res.json('Item added successfully');
+//     })
+//     .catch(err => {
+//         res.status(400).send("unable to save to database");
+//     });
+// });
 
 // Defined get data menu items route
 // router.get('/menu-items', (req, res) => {
@@ -42,30 +66,8 @@ router.post('/menu-items', (req, res) => {
 //   });
 // });
 
-router.get('/menu-items', (req, res) => {
-  Item.find({ 'menuItem': true }, (err, items) => {
-    if(err){
-      console.log(err);
-    }
-    else {
-      res.json(items);
-    }
-  });
-});
 
-// Defined get data(index or listing) route
-router.get('/', (req, res) => {
-  Item.find((err, items) => {
-    if(err){
-      console.log(err);
-    }
-    else {
-      res.json(items);
-    }
-  });
-});
-
-// ItemsList page filter query
+// Returns items from db item collection with tag: req.params.tag
 router.get('/:tag', (req, res) => {
   const tagValue = req.params.tag;
   console.log(tagValue);
@@ -79,7 +81,7 @@ router.get('/:tag', (req, res) => {
   });
 });
 
-// Defined edit route
+// Returns item from db item collection with id: req.params.id
 router.get('/:id', (req, res) => {
   const id = req.params.id;
   Item.findById(id, (err, item) => {
@@ -87,7 +89,7 @@ router.get('/:id', (req, res) => {
   });
 });
 
-//  Defined update route
+// Updates/saves item from db item collection data
 router.put('/:id', (req, res) => {
   Item.findById(req.params.id, function(err, item) {
     if (!item)
@@ -106,8 +108,7 @@ router.put('/:id', (req, res) => {
   });
 });
 
-// Add Item to Menu
-//  Defined update route
+// Updates item from db item collection with menuItem: req.body.menuItem
 router.put('/add-menu-item/:id', (req, res) => {
   Item.findById(req.params.id, (err, item) => {
     if (!item)
@@ -128,7 +129,7 @@ router.put('/add-menu-item/:id', (req, res) => {
   });
 });
 
-// Defined delete | remove | destroy route
+// Deletes item from db item collection
 router.delete('/:id', (req, res) => {
   Item.findOneAndDelete({_id: req.params.id},
        function(err, item){
@@ -137,16 +138,16 @@ router.delete('/:id', (req, res) => {
     });
 });
 
-// Defined menu delete | remove | destroy route
-router.delete('/menu-items/:id', (req, res) => {
-  MenuItem.findOneAndDelete({_id: req.params.id},
-       function(err, item){
-        if(err) res.json(err);
-        else res.json('Successfully removed');
-  })
-  .then(res => {
-    console.log('success');
-  })  ;
-});
+// // Defined menu delete | remove | destroy route
+// router.delete('/menu-items/:id', (req, res) => {
+//   MenuItem.findOneAndDelete({_id: req.params.id},
+//        function(err, item){
+//         if(err) res.json(err);
+//         else res.json('Successfully removed');
+//   })
+//   .then(res => {
+//     console.log('success');
+//   })  ;
+// });
 
 module.exports = router;
