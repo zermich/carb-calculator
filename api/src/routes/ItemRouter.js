@@ -127,8 +127,7 @@ router.put('/add-menu-item/:id', (req, res) => {
   });
 });
 
-router.get('/menu/clear-menu', (req, res) => {
-  console.log('clear menu pinged');
+router.put('/menu/clear-menu', (req, res) => {
   Item.updateMany({ menuItem: true}, {$set: {menuItem: false}})
   .catch (err => console.log(err));
 })

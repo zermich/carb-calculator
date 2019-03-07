@@ -80,7 +80,7 @@ class ItemService {
     // }
 
     clearMenu(){
-        return axios.get('http://localhost:4200/items/menu/clear-menu', {
+        return axios.put('http://localhost:4200/items/menu/clear-menu', {
             // menuItem: false
         });
         // .then( res => {
