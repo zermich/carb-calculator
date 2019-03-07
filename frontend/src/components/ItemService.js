@@ -10,6 +10,13 @@ class ItemService {
         });
     }
 
+    fetchMenuItems() {
+        return axios.get('http://localhost:4200/items/menu-items')
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
     // Posts new items to db items collection
     sendNewItemData(data, callback) {
         return axios.post('http://localhost:4200/items/new-item', {
@@ -62,8 +69,7 @@ class ItemService {
         })
         .then( res => {
             successCallback(res);
-        })
-        ;
+        });
     }
 
     // filterData(tag) {
@@ -72,6 +78,15 @@ class ItemService {
     //         console.log(error);
     //     });
     // }
+
+    clearMenu(){
+        return axios.get('http://localhost:4200/items/menu/clear-menu', {
+            // menuItem: false
+        });
+        // .then( res => {
+        //     successCallback(res);
+        // });
+    }
 
     // Deletes item from db
     deleteData(id, successCallback) {

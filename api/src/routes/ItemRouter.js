@@ -70,7 +70,6 @@ router.post('/new-item', (req, res) => {
 // Returns items from db item collection with tag: req.params.tag
 router.get('/:tag', (req, res) => {
   const tagValue = req.params.tag;
-  console.log(tagValue);
   Item.find({ tag: tagValue }, (err, items) => {
     if(err){
       console.log(err);
@@ -127,6 +126,12 @@ router.put('/add-menu-item/:id', (req, res) => {
     
   });
 });
+
+router.get('/menu/clear-menu', (req, res) => {
+  console.log('clear menu pinged');
+  Item.updateMany({ menuItem: true}, {$set: {menuItem: false}})
+  .catch (err => console.log(err));
+})
 
 // Deletes item from db item collection
 router.delete('/:id', (req, res) => {
