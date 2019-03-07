@@ -72,21 +72,24 @@ class ItemService {
         });
     }
 
+    // Clears current menu by updating all items with menuItem: true to false
+    clearMenu(successCallback){
+        return axios.put('http://localhost:4200/items/menu/clear-menu', {headers: {"Content-Type": "text/plain"}})
+        .then( res => {
+            console.debug('success');
+            successCallback(res);
+        })
+        .catch(err => {
+            console.error(err);
+        })
+    }
+
     // filterData(tag) {
     //     return axios.get('http://localhost:4200/items/'+tag,  { 'Content-Type': 'application/json' })
     //     .catch( error => {
     //         console.log(error);
     //     });
     // }
-
-    clearMenu(){
-        return axios.put('http://localhost:4200/items/menu/clear-menu', {
-            // menuItem: false
-        });
-        // .then( res => {
-        //     successCallback(res);
-        // });
-    }
 
     // Deletes item from db
     deleteData(id, successCallback) {

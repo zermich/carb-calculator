@@ -62,7 +62,10 @@ class Menu extends Component {
 
     clearMenu(e){
         e.preventDefault();
-        this.addItemService.clearMenu();
+        const callback = (res) => { console.log(res);};
+        this.addItemService.clearMenu(callback)
+            .then( res => {console.log(res);})
+            .catch(err => {console.log(err);});
         // this.addItemService.clearMenu( res => { 
         //     axios.get('http://localhost:4200/items/menu-items')
         //     .then( response => {
