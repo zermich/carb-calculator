@@ -95,9 +95,7 @@ router.put('/:id', (req, res) => {
     if (!item)
       return next(new Error('Could not load Document'));
     else {
-      // do your updates here
       item.item = req.body.item;
-
       item.save().then(item => {
           res.json('Update complete', item);
       })
@@ -114,13 +112,14 @@ router.put('/add-menu-item/:id', (req, res) => {
     if (!item)
       return next(new Error('Could not load Document'));
     else {
-      // do your updates here
-      item.menuItem = req.body.menuItem;
-
-      item.save().then(item => {
-          // res.json('Update complete', item);
+      if(item.menuItem === req.body.menuItem) {
+        console.log('Item already added to menu');
+      } else {
+        item.menuItem = req.body.menuItem;
+        item.save().then(item => {
           res.json(item);
-      })
+        })
+      }
       // .catch(err => {
       //       res.status(400).send("unable to update the database");
       // });

@@ -15,7 +15,7 @@ class TableRow extends Component {
     handlePlus(event) {
       event.preventDefault();
         // this.addItemService.addItemToMenu(this.props.obj, res => {});
-      this.addItemService.updateMenuItemData(this.props.obj._id, true, res => {});
+      this.addItemService.updateMenuItemData(this.props.obj._id, true, res => { this.props.onMenuItemAdd(); });
     }
 
 
