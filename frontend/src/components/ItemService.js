@@ -10,6 +10,13 @@ class ItemService {
         });
     }
 
+    fetchMenuItems() {
+        return axios.get('http://localhost:4200/items/menu-items')
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
     // Posts new items to db items collection
     sendNewItemData(data, callback) {
         return axios.post('http://localhost:4200/items/new-item', {
@@ -62,8 +69,19 @@ class ItemService {
         })
         .then( res => {
             successCallback(res);
+        });
+    }
+
+    // Clears current menu by updating all items with menuItem: true to false
+    clearMenu(successCallback){
+        return axios.put('http://localhost:4200/items/menu/clear-menu')
+        .then( res => {
+            console.debug('success');
+            successCallback(res);
         })
-        ;
+        .catch(err => {
+            console.error(err);
+        })
     }
 
     // filterData(tag) {

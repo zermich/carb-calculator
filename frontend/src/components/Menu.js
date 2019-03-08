@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
-import ItemService from './ItemService';
 import axios from 'axios';
 
+import ItemService from '../components/ItemService';
 import MenuItem from '../components/MenuItem';
 
 class Menu extends Component {
@@ -17,6 +17,7 @@ class Menu extends Component {
         this.handleChange = this.handleChange.bind(this);
         this.handleChangeCarbsDesired = this.handleChangeCarbsDesired.bind(this);
         this.handleDelete = this.handleDelete.bind(this);
+        this.clearMenu = this.clearMenu.bind(this);
         this.addItemService = new ItemService();
     }
 
@@ -59,6 +60,11 @@ class Menu extends Component {
         });
     };
 
+    clearMenu(e){
+        e.preventDefault();
+        this.addItemService.clearMenu(()=> {this.props.history.push("/all-items");})
+    }
+
     tabRow(){
         if(this.state.items instanceof Array){
             return this.state.items.map( (object, i) => {
@@ -71,6 +77,7 @@ class Menu extends Component {
         return (
             <div className='content-container'>
                 <h2 className='content-header'>Menu</h2>
+                <button onClick={this.clearMenu}>Clear Menu</button>
                 <div id='total-carbs-desired-form'>
                     Total Carbs Desired&#58; 
                     <input type='number' id='carbsDesired' name='carbsDesired' onChange={this.handleChangeCarbsDesired}/>
