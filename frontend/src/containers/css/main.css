@@ -135,6 +135,11 @@ body {
     font-weight: 300; }
     .items-table tbody tr td {
       border-bottom: .15em dotted #3097f5; }
+      .items-table tbody tr td .btn-item-row {
+        color: black;
+        background: none;
+        border: none;
+        cursor: pointer; }
 
 #total-carbs-desired-form {
   margin: .75em 0; }

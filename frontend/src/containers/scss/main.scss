@@ -1,6 +1,5 @@
 $amatic: 'Amatic SC', cursive;
 $monty: 'Montserrat', sans-serif;
-$marker: 'Permanent Marker', cursive;
 $satisfy: 'Satisfy', cursive;
 $caveat: 'Caveat', cursive;
 
@@ -168,6 +167,12 @@ body {
     tr {
       td {
         border-bottom: .15em dotted #3097f5;
+        .btn-item-row {
+          color: black;
+          background: none;
+          border: none;
+          cursor: pointer;
+        }
       }
     }
   }

@@ -35,16 +35,16 @@ class TableRow extends Component {
             {this.props.obj.tag}
           </td>
           <td>
-            <button onClick={this.handlePlus} className='add-menu-item-button' >+</button>
+            <button onClick={this.handlePlus} className='add-menu-item-button btn-item-row'><i className="material-icons">add</i></button>
           </td>
           <td>
-            <button><Link to={`/edit/${this.props.obj._id}`}>Edit</Link></button>
+            <Link to={`/edit/${this.props.obj._id}`} className='btn-item-row'><i className="material-icons">create</i></Link>
           </td>
           <td>
           {/* <form onSubmit={this.handleSubmit}>
             <input type='submit' value='Delete'/>
           </form> */}
-            <button onClick={this.handleSubmit}>Delete</button>
+            <button onClick={this.handleSubmit} className='btn-item-row'><i className="material-icons">delete</i></button>
           </td>
         </tr>
     );
