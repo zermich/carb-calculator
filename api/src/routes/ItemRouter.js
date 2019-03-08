@@ -9,7 +9,7 @@ const MenuItem = require('../models/MenuItem');
 router.get('/', (req, res) => {
   Item.find((err, items) => {
     if(err){
-      console.log(err);
+      console.log('get / err is', err);
     }
     else {
       res.json(items);
@@ -21,7 +21,7 @@ router.get('/', (req, res) => {
 router.get('/menu-items', (req, res) => {
   Item.find({ 'menuItem': true }, (err, items) => {
     if(err){
-      console.log(err);
+      console.log('get /menu-items err is', err);
     }
     else {
       res.json(items);
@@ -72,7 +72,7 @@ router.get('/:tag', (req, res) => {
   const tagValue = req.params.tag;
   Item.find({ tag: tagValue }, (err, items) => {
     if(err){
-      console.log(err);
+      console.log('get /:tag err is', err);
     }
     else {
       res.json(items);
@@ -137,8 +137,9 @@ router.put('/menu/clear-menu', (req, res) => {
   // } catch (e) {
   //   print(e);
   // }
-  Item.updateMany({ menuItem: true }, { menuItem: false}, err => { console.log(err);})
-    .then( res.send('success'));
+  Item.updateMany({ menuItem: true }, { menuItem: false})
+    .then( res.send('success'))
+    .catch( err => {console.log(err);});
 })
 
 // Deletes item from db item collection
