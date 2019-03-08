@@ -91,6 +91,38 @@ body {
   font-weight: 200;
   margin-bottom: 1.5em; }
 
+#current-menu-container {
+  border: 1em solid #3e1c00;
+  background-image: url("../../images/blackboard.jpg");
+  background-position: center;
+  background-size: cover;
+  color: white;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 1em .15em;
+  -moz-box-shadow: inset 0 0 10px #000000;
+  -webkit-box-shadow: inset 0 0 10px #000000;
+  box-shadow: inset 0 0 10px #000000; }
+  #current-menu-container h3 {
+    margin-top: 0;
+    font-family: "Permanent Marker", cursive;
+    letter-spacing: .1em;
+    font-weight: regular; }
+  #current-menu-container table {
+    margin: 0 auto;
+    text-align: left;
+    font-family: "Caveat", cursive;
+    font-size: 1.25em;
+    min-width: 55%; }
+  #current-menu-container .btn-current-menu-delete {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: "Caveat", cursive;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .75em; }
+
 .items-table {
   margin: 0 auto;
   text-align: left;

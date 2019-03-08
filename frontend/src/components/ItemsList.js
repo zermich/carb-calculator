@@ -133,7 +133,7 @@ class ItemsList extends Component {
       return (
         <div className='content-container'>
           <h2 className='content-header'>Items</h2>
-          <div>
+          <div id='current-menu-container'>
             <h3>Current Menu</h3>
             <table>
                 <tbody>

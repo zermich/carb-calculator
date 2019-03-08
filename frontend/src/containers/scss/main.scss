@@ -1,5 +1,8 @@
 $amatic: 'Amatic SC', cursive;
 $monty: 'Montserrat', sans-serif;
+$marker: 'Permanent Marker', cursive;
+$satisfy: 'Satisfy', cursive;
+$caveat: 'Caveat', cursive;
 
 
 body {
@@ -112,6 +115,43 @@ body {
   padding: .5em 1.5em;
   font-weight: 200;
   margin-bottom: 1.5em;
+}
+
+#current-menu-container {
+  // background-color: black;
+  border: 1em solid #3e1c00;
+  background-image: url('../../images/blackboard.jpg');
+  background-position: center;
+  background-size: cover;
+  color: white;
+  max-width: 50%;
+  margin: 0 auto;
+  padding: 1em .15em;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+  h3 {
+    margin-top: 0;
+    font-family: $marker;
+    letter-spacing: .1em;
+    font-weight: regular;
+  }
+  table {
+    margin: 0 auto;
+    text-align: left;
+    font-family: $caveat;
+    font-size: 1.25em;
+    min-width: 55%;
+  }
+  .btn-current-menu-delete {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: $caveat;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .75em;
+  }
 }
 
 .items-table {

@@ -28,7 +28,7 @@ class CurrentMenuItemRow extends Component {
                 {this.props.obj.tag}
             </td>
             <td>
-                <button onClick={this.handleDelete}>-</button>
+                <button className="btn-current-menu-delete" onClick={this.handleDelete}>X</button>
             </td>
         </tr>
     );
