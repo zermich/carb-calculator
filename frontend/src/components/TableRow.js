@@ -26,13 +26,6 @@ class TableRow extends Component {
 
 
   render() {
-    const handleAddButtonColor = a => {
-      if( a ) {
-        return 'rgba(48, 151, 245, .6)';
-      } else {
-        return 'rgba(255, 255, 255, .6)';
-      }
-    }
     return (
         <tr>
           <td>
@@ -42,12 +35,7 @@ class TableRow extends Component {
             {this.props.obj.tag}
           </td>
           <td>
-            <button 
-              onClick={this.handlePlus} 
-              className='add-menu-item-button' 
-              style={{background: handleAddButtonColor(this.props.obj.menuItem)}} >
-                +
-            </button>
+            <button onClick={this.handlePlus} className='add-menu-item-button' >+</button>
           </td>
           <td>
             <button><Link to={`/edit/${this.props.obj._id}`}>Edit</Link></button>

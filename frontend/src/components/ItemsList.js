@@ -145,7 +145,6 @@ class ItemsList extends Component {
             <thead>
               <tr>
                 <td><button onClick={this.handleSort} name='item'>Item</button></td>
-                {/* <td><button onClick={this.handleFilter} name='tag'>Category</button></td> */}
                 <td>
                   <select name='tag' placeholder='Category' onChange={this.handleFilter}>
                     <option default value='category'>All Categories</option>
