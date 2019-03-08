@@ -74,7 +74,7 @@ class ItemService {
 
     // Clears current menu by updating all items with menuItem: true to false
     clearMenu(successCallback){
-        return axios.put('http://localhost:4200/items/menu/clear-menu', {headers: {"Content-Type": "text/plain"}})
+        return axios.put('http://localhost:4200/items/menu/clear-menu')
         .then( res => {
             console.debug('success');
             successCallback(res);

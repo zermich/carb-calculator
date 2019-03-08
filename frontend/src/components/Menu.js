@@ -62,19 +62,7 @@ class Menu extends Component {
 
     clearMenu(e){
         e.preventDefault();
-        const callback = (res) => { console.log(res);};
-        this.addItemService.clearMenu(callback)
-            .then( res => {console.log(res);})
-            .catch(err => {console.log(err);});
-        // this.addItemService.clearMenu( res => { 
-        //     axios.get('http://localhost:4200/items/menu-items')
-        //     .then( response => {
-        //         this.setState({ items: response.data });
-        //     })
-        //     .catch( error => {
-        //         console.log(error);
-        //     });
-        //  });
+        this.addItemService.clearMenu(()=> {this.props.history.push("/all-items");})
     }
 
     tabRow(){

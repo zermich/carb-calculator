@@ -128,8 +128,17 @@ router.put('/add-menu-item/:id', (req, res) => {
 });
 
 router.put('/menu/clear-menu', (req, res) => {
-  Item.updateMany({ menuItem: true}, {$set: {menuItem: false}})
-  .catch (err => console.log(err));
+  // res.send('success');
+  // Item.updateMany({ menuItem: true}, {$set: {menuItem: false}})
+  // .catch (err => console.log(err));
+  // try {
+  //   Item.updateMany({ menuItem: true}, {$set: {menuItem: false}});
+  //   res.send('success');
+  // } catch (e) {
+  //   print(e);
+  // }
+  Item.updateMany({ menuItem: true }, { menuItem: false}, err => { console.log(err);})
+    .then( res.send('success'));
 })
 
 // Deletes item from db item collection
