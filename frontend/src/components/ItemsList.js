@@ -141,11 +141,15 @@ class ItemsList extends Component {
                 </tbody>
             </table>
           </div>
+
+
           <table className='items-table'>
             <thead>
               <tr>
-                <td><button onClick={this.handleSort} name='item'>Item</button></td>
-                <td>
+                {/* <th>Add to Menu</th> */}
+                <th></th>
+                <th><button onClick={this.handleSort} name='item'>Item</button></th>
+                <th>
                   <select name='tag' placeholder='Category' onChange={this.handleFilter}>
                     <option default value='category'>All Categories</option>
                     <option value='fruit'>Fruit</option>
@@ -153,10 +157,10 @@ class ItemsList extends Component {
                     <option value='vegetable'>Vegetable</option>
                     <option value='dessert'>Dessert</option>
                   </select>
-                </td>
+                </th>
               </tr>
             </thead>
-            <tbody>
+            <tbody className='items-list-tbody'>
               {this.tabRow()}
             </tbody>
           </table>

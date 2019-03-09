@@ -127,14 +127,21 @@ body {
 .items-table {
   margin: 0 auto;
   text-align: left;
-  min-width: 50%; }
-  .items-table thead {
-    font-size: 1.15em;
-    text-transform: uppercase; }
+  min-width: 50%;
+  border-collapse: collapse; }
+  .items-table thead, .items-table th, .items-table button, .items-table select {
+    font-size: .75em;
+    text-transform: uppercase;
+    background: none;
+    border: none;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 300;
+    letter-spacing: .05em; }
   .items-table tbody {
     font-weight: 300; }
     .items-table tbody tr td {
-      border-bottom: .15em dotted #3097f5; }
+      white-space: nowrap;
+      border-bottom: .1em solid gray; }
       .items-table tbody tr td .btn-item-row {
         color: black;
         background: none;
@@ -160,8 +167,5 @@ body {
     background-color: rgba(0, 0, 0, 0.8); }
   .menu-item p {
     margin-top: .15em; }
-
-.add-menu-item-button::active {
-  background-color: blue; }
 
 /*# sourceMappingURL=main.css.map */

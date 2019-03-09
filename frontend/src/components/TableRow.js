@@ -27,26 +27,43 @@ class TableRow extends Component {
 
   render() {
     return (
-        <tr>
-          <td>
-            {this.props.obj.item}
-          </td>
-          <td>
-            {this.props.obj.tag}
-          </td>
-          <td>
-            <button onClick={this.handlePlus} className='add-menu-item-button btn-item-row'><i className="material-icons">add</i></button>
-          </td>
-          <td>
-            <Link to={`/edit/${this.props.obj._id}`} className='btn-item-row'><i className="material-icons">create</i></Link>
-          </td>
-          <td>
-          {/* <form onSubmit={this.handleSubmit}>
-            <input type='submit' value='Delete'/>
-          </form> */}
-            <button onClick={this.handleSubmit} className='btn-item-row'><i className="material-icons">delete</i></button>
-          </td>
-        </tr>
+        // <tr>
+        //   <td>
+        //     {this.props.obj.item}
+        //   </td>
+        //   <td>
+        //     {this.props.obj.tag}
+        //   </td>
+        //   <td>
+        //     <button onClick={this.handlePlus} className='add-menu-item-button btn-item-row'><i className="material-icons">add</i></button>
+        //   </td>
+        //   <td>
+        //     <Link to={`/edit/${this.props.obj._id}`} className='btn-item-row'><i className="material-icons">create</i></Link>
+        //   </td>
+        //   <td>
+        //   {/* <form onSubmit={this.handleSubmit}>
+        //     <input type='submit' value='Delete'/>
+        //   </form> */}
+        //     <button onClick={this.handleSubmit} className='btn-item-row'><i className="material-icons">delete</i></button>
+        //   </td>
+        // </tr>
+          <tr>
+           <td>
+              <button onClick={this.handlePlus} className='add-menu-item-button btn-item-row'><i className="material-icons">add</i></button>
+            </td>
+            <td>
+              {this.props.obj.item}
+            </td>
+            <td>
+              {this.props.obj.tag}
+            </td>
+            <td>
+              <Link to={`/edit/${this.props.obj._id}`} className='btn-item-row'><i className="material-icons">create</i></Link>
+            </td>
+            <td>
+              <button onClick={this.handleSubmit} className='btn-item-row'><i className="material-icons">delete</i></button>
+            </td>
+          </tr>
     );
   }
 }

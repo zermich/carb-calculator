@@ -158,15 +158,22 @@ body {
   margin: 0 auto;
   text-align: left;
   min-width: 50%;
-  thead {
-    font-size: 1.15em;
+  border-collapse: collapse;
+  thead, th, button, select {
+    font-size: .75em;
     text-transform: uppercase;
+    background: none;
+    border: none;
+    font-family: $monty;
+    font-weight: 300;
+    letter-spacing: .05em;
   }
   tbody {
     font-weight: 300;
     tr {
       td {
-        border-bottom: .15em dotted #3097f5;
+        white-space: nowrap;
+        border-bottom: .1em solid gray;
         .btn-item-row {
           color: black;
           background: none;
@@ -177,6 +184,7 @@ body {
     }
   }
 }
+
 
 #total-carbs-desired-form {
   margin: .75em 0;
@@ -203,9 +211,4 @@ body {
   p {
     margin-top: .15em;
   }
-}
-
-
-.add-menu-item-button::active {
-  background-color: blue;
 }
