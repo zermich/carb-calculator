@@ -5,19 +5,22 @@ body {
 
 #background {
   background-image: url("../../images/hawaiian-beach.jpg");
-  min-height: 100vh;
-  width: 100vw;
+  height: 100%;
+  width: 100%;
   background-size: cover; }
 
 .contentbox-wrapper {
   max-width: 1000px;
   margin: 0 auto;
-  padding: 1.5em 1.5em; }
+  padding: 0; }
   .contentbox-wrapper .contentbox {
     min-height: 80vh;
     min-width: 50%;
     max-width: 1000px;
     background-color: rgba(255, 255, 255, 0.85); }
+  @media (min-width: 600px) {
+    .contentbox-wrapper {
+      padding: 1.5em 1.5em; } }
 
 #title-nav {
   display: flex;
