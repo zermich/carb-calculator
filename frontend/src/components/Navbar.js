@@ -25,7 +25,7 @@ class Navbar extends Component {
     return (
         <div className="nav-container">
 
-          <button onClick={this.toggleMenuVisibility} id='nav-mobile-header'>Navigate To <i class="material-icons">keyboard_arrow_down</i></button>
+          <button onClick={this.toggleMenuVisibility} id='nav-mobile-header'>Navigate To <i className="material-icons">keyboard_arrow_down</i></button>
 
           <ul className={handleMenuVisibility()}>
             <li><Link to="/" name='Calculator' onClick={this.toggleMenuVisibility}>Calculator</Link></li>

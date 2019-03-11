@@ -15,7 +15,7 @@ class Calculator extends Component {
     let x = this._newDesiredCarbs.value;
     let n = ((y*x)/z).toFixed(2);
     this.setState ({
-       idealWeight: `${n}g`
+       idealWeight: n
      });
   }
 
@@ -27,7 +27,7 @@ class Calculator extends Component {
         <div>
           <form>
             <div className='form-row'>
-              <label>Item Serving Size (in grams):</label>
+              <label>Item Serving Size:</label>
               <input type='number' id='info-serving-size' name='item-serving-size' ref={input => this._newServing = input}/>
             </div>
             <div className='form-row'>
