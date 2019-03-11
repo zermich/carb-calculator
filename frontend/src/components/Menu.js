@@ -77,13 +77,13 @@ class Menu extends Component {
         return (
             <div className='content-container'>
                 <h2 className='content-header'>Menu</h2>
-                <button onClick={this.clearMenu}>Clear Menu</button>
+                <button className='btn-small' onClick={this.clearMenu}>Clear Menu</button>
                 <div id='total-carbs-desired-form'>
                     Total Carbs Desired&#58; 
                     <input type='number' id='carbsDesired' name='carbsDesired' onChange={this.handleChangeCarbsDesired}/>
                 </div> 
                 {this.tabRow()}
-                <h3>Total Carbs Remaining: {this.state.carbsRemaining}</h3>
+                <h3 style={{'padding-bottom': '1em'}}>Total Carbs Remaining: {this.state.carbsRemaining}</h3>
             </div>
         )
     }

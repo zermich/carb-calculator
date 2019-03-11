@@ -55,7 +55,7 @@ class MenuItem extends Component {
     return (
       <div className='menu-item' style={{background: handleBackgroundColor(this.props.obj.tag)}} >
         <div>
-          <button className='form-submit-button' onClick={this.handleDelete}>Remove from Menu</button>
+          <button style={{'margin-top': '1em'}} className='btn-small' onClick={this.handleDelete}>Remove from Menu</button>
         </div>
         <h2>{this.props.obj.tag}: {this.props.obj.item}</h2>
         <form>
@@ -65,7 +65,7 @@ class MenuItem extends Component {
           </div>
         </form>
         <div>
-          <button className='form-submit-button' onClick={this.calculateWeight}>Calculate</button>
+          <button className='btn-small' onClick={this.calculateWeight}>Calculate</button>
         </div>
         <p>Ideal Weight&#58; {this.state.idealWeight} {this.state.measure}</p>
 

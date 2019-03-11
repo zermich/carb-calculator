@@ -116,16 +116,26 @@ body {
       .content-container form .form-row input {
         border: none; }
 
-.form-submit-button {
-  background-color: #3097f5;
+.form-submit-button, .btn-small {
   text-transform: uppercase;
-  color: white;
-  font-size: 1.5em;
   letter-spacing: .25em;
   border: none;
   padding: .5em 1.5em;
   font-weight: 200;
+  cursor: pointer; }
+
+.form-submit-button {
+  background-color: #3097f5;
+  color: white;
+  font-size: 1.5em;
   margin-bottom: 1.5em; }
+
+.btn-small {
+  display: block;
+  margin: 0 auto 1.5em;
+  background-color: white;
+  color: black;
+  font-size: .75em; }
 
 #current-menu-container {
   border: 1em solid #3e1c00;
@@ -186,6 +196,8 @@ body {
 
 #total-carbs-desired-form {
   margin: .75em 0; }
+  #total-carbs-desired-form #carbsDesired {
+    margin-left: .5em; }
 
 .menu-item {
   padding: .25em 0;
@@ -197,10 +209,6 @@ body {
     margin-bottom: .65em; }
     .menu-item form .form-row {
       margin: 0; }
-  .menu-item button {
-    font-size: 1em;
-    margin-bottom: .5em;
-    background-color: rgba(0, 0, 0, 0.8); }
   .menu-item p {
     margin-top: .15em; }
 

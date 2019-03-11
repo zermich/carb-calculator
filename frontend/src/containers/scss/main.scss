@@ -152,16 +152,31 @@ body {
   }
 }
 
-.form-submit-button {
-  background-color: #3097f5;
+%btn-all {
   text-transform: uppercase;
-  color: white;
-  font-size: 1.5em;
   letter-spacing: .25em;
   border: none;
   padding: .5em 1.5em;
   font-weight: 200;
+  cursor: pointer;
+}
+
+.form-submit-button {
+  @extend %btn-all;
+  background-color: #3097f5;
+  color: white;
+  font-size: 1.5em;
   margin-bottom: 1.5em;
+}
+
+.btn-small {
+  @extend %btn-all;
+  display: block;
+  margin: 0 auto 1.5em;
+  // background-color: #3097f5;
+  background-color: white;
+  color: black;
+  font-size: .75em;
 }
 
 #current-menu-container {
@@ -236,6 +251,9 @@ body {
 
 #total-carbs-desired-form {
   margin: .75em 0;
+  #carbsDesired {
+    margin-left: .5em;
+  }
 }
 
 .menu-item {
@@ -251,11 +269,11 @@ body {
       margin: 0;
     } 
   }
-  button {
-    font-size: 1em;
-    margin-bottom: .5em;
-    background-color: rgba(0, 0, 0, .8);
-  }
+  // button {
+  //   font-size: 1em;
+  //   margin-bottom: .5em;
+  //   background-color: rgba(0, 0, 0, .8);
+  // }
   p {
     margin-top: .15em;
   }
