@@ -6,7 +6,6 @@ class Navbar extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeLink: 'Navigate to...',
       menuVisible: false
     }
     this.toggleMenuVisibility = this.toggleMenuVisibility.bind(this);
@@ -20,15 +19,15 @@ class Navbar extends Component {
 
   render () {
     const handleMenuVisibility = () => {
-      return this.state.menuVisible ? 'flex' : 'none';
+      return this.state.menuVisible ? 'navbar-ul-visible' : 'navbar-ul-hidden';
     }
 
     return (
         <div className="nav-container">
 
-          <button onClick={this.toggleMenuVisibility}>{this.state.activeLink}</button>
+          <button onClick={this.toggleMenuVisibility} id='nav-mobile-header'>Navigate To <i class="material-icons">keyboard_arrow_down</i></button>
 
-          <ul style={{display: handleMenuVisibility()}}>
+          <ul className={handleMenuVisibility()}>
             <li><Link to="/" name='Calculator' onClick={this.toggleMenuVisibility}>Calculator</Link></li>
             <li><Link to="/new-item" name='New Item' onClick={this.toggleMenuVisibility}>New Item</Link></li>
             <li><Link to="/all-items" name='Items' onClick={this.toggleMenuVisibility}>Items</Link></li>
