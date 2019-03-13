@@ -17,7 +17,7 @@ mongoose.connect('mongodb://zermich:PeterPan01@ds153495.mlab.com:53495/carb-calc
     });
 
 //Required application specific custom router module
-const itemRouter = require('./src/routes/itemRouter');
+const itemRouter = require('./src/routes/ItemRouter');
 
 //Use middlewares to set view engine and post json data to the server
 app.use(express.static('public'));
