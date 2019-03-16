@@ -7,7 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import axios from 'axios';
 
 const protocol = 'http://';
-const ip = '127.0.0.1';
+const ip = '134.209.115.188';
 const port = '3000';
 const api = '/carbcalc-api';
 const prefix = `${protocol}${ip}:${port}${api}`;
