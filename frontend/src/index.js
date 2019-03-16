@@ -4,6 +4,15 @@ import './index.css';
 import './containers/css/main.css'
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
+import axios from 'axios';
+
+const protocol = 'http://';
+const ip = '127.0.0.1';
+const port = '3000';
+const api = '/carbcalc-api';
+const prefix = `${protocol}${ip}:${port}${api}`;
+
+axios.defaults.baseURL = prefix;
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();

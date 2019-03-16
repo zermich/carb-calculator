@@ -21,8 +21,9 @@ class EditItem extends Component {
     }
 
     componentDidMount(){
-        axios.get('http://localhost:4200/items/'+this.props.match.params.id)
+        axios.get('/items/'+this.props.match.params.id)
         .then(res => {
+            console.log(res);
             this.setState({ 
                 item: res.data.item,
                 tag: res.data.tag,

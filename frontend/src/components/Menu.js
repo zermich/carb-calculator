@@ -23,7 +23,7 @@ class Menu extends Component {
 
 
     componentDidMount(){
-        axios.get('http://localhost:4200/items/menu-items')
+        axios.get('/items/menu-items')
         .then( response => {
             this.setState({ items: response.data });
             // console.log(response.data);
@@ -51,7 +51,7 @@ class Menu extends Component {
     }
 
     handleDelete(){
-        axios.get('http://localhost:4200/items/menu-items')
+        axios.get('/items/menu-items')
         .then( response => {
             this.setState({ items: response.data });
         })

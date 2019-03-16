@@ -43,8 +43,8 @@ class ItemsList extends Component {
 
       // Retrieves all items items with menuItem true from db items collection
       axios.all([
-        axios.get('http://localhost:4200/items'),
-        axios.get('http://localhost:4200/items/menu-items')
+        axios.get('/items'),
+        axios.get('/items/menu-items')
       ])
       .then(axios.spread((items, menuItems) => {
         this.setState({
@@ -90,7 +90,7 @@ class ItemsList extends Component {
 
     // Retrieves updated items with menuItem: true from db items collection when item is added to menu
     updateCurrentMenu() {
-      axios.get('http://localhost:4200/items/menu-items')
+      axios.get('/items/menu-items')
       .then( response => {
           this.setState({ menuItems: response.data });
       })
@@ -110,7 +110,7 @@ class ItemsList extends Component {
 
     // Retrieves updated items with menuItem: true from db items collection when item is removed from menu
     handleMenuItemDelete(){
-        axios.get('http://localhost:4200/items/menu-items')
+        axios.get('/items/menu-items')
         .then( response => {
             this.setState({ menuItems: response.data });
         })
