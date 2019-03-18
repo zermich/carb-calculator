@@ -149,6 +149,7 @@ class ItemsList extends Component {
                     <option value='protein'>Protein</option>
                     <option value='vegetable'>Vegetable</option>
                     <option value='dessert'>Dessert</option>
+                    <option value='misc'>Misc</option>
                   </select>
                 </th>
               </tr>
