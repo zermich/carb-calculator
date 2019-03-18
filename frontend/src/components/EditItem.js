@@ -63,7 +63,15 @@ class EditItem extends Component {
                 </div>
                 <div className='form-row'>
                     <label htmlFor='tag'>Tag&#58;</label>
-                    <input type='text' id='tag' name='tag' defaultValue={this.state.tag} onChange={this.handleChange} />
+                    {/* <input type='text' id='tag' name='tag' defaultValue={this.state.tag} onChange={this.handleChange} /> */}
+                    <select name='tag' onChange={this.handleChange}>
+                        <option default value={this.state.tag}>{this.state.tag}</option>
+                        <option value='fruit'>Fruit</option>
+                        <option value='protein'>Protein</option>
+                        <option value='vegetable'>Vegetable</option>
+                        <option value='dessert'>Dessert</option>
+                        <option value='misc'>Misc</option>
+                    </select>
                 </div>
                 <div className='form-row'>
                     <label htmlFor='serving-size'>Serving Size&#58;</label>
@@ -71,7 +79,12 @@ class EditItem extends Component {
                 </div>
                 <div className='form-row'>
                     <label htmlFor='calories'>Measure&#58;</label>
-                    <input type='text' id='calories' name='measure' defaultValue={this.state.measure} onChange={this.handleChange} />
+                    {/* <input type='text' id='calories' name='measure' defaultValue={this.state.measure} onChange={this.handleChange} /> */}
+                    <select name='measure' onChange={this.handleChange}>
+                        <option default value={this.state.measure}>{this.state.measure}</option>
+                        <option value='g'>Grams</option>
+                        <option value='oz'>Ounces</option>
+                    </select>
                 </div>
                 <div className='form-row'>
                     <label htmlFor='carbs'>Carbs&#58;</label>
