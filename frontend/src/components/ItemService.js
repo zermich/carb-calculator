@@ -1,13 +1,5 @@
 import axios from 'axios';
 
-// const ip = '134.209.76.47';
-// const ip = 'localhost';
-const protocol = 'http://';
-const ip = '127.0.0.1';
-const port = '3000';
-const api = '/carbcalc-api';
-const prefix = `${protocol}${ip}:${port}${api}`;
-
 class ItemService {
 
     // Retrieves all items from db items collection
