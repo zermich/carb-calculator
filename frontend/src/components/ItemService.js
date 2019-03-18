@@ -13,6 +13,9 @@ class ItemService {
     // Retrieves all items with menuItem: true from db items collection
     fetchMenuItems() {
         return axios.get(`/items/menu-items`)
+        // .then( res => {
+        //     callback();
+        // })
         .catch(err => {
             console.log(err);
         });

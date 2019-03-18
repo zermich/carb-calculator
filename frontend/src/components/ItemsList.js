@@ -20,27 +20,9 @@ class ItemsList extends Component {
         this.handleSort = this.handleSort.bind(this);
         this.handleFilter = this.handleFilter.bind(this);
         this.updateCurrentMenu = this.updateCurrentMenu.bind(this);
-        this.handleMenuItemDelete = this.handleMenuItemDelete.bind(this);
     }
 
     componentDidMount(){
-      // this.addItemService.fetchAllItems()
-      // .then( response => {
-      //     this.setState({ items: response.data, visibleItems: response.data });
-      // })
-      // .catch( error => {
-      //     console.log(error);
-      // });
-
-      // axios.get('http://localhost:4200/items/menu-items')
-      // .then( response => {
-      //     this.setState({ menuItems: response.data });
-      //     // console.log(response.data);
-      // })
-      // .catch( error => {
-      //     console.log(error);
-      // });
-
       // Retrieves all items items with menuItem true from db items collection
       axios.all([
         axios.get('/items'),
@@ -88,14 +70,14 @@ class ItemsList extends Component {
       }
     }
 
-    // Retrieves updated items with menuItem: true from db items collection when item is added to menu
+    // Retrieves updated items with menuItem: true from db items collection when item is added to/removed from menu
     updateCurrentMenu() {
-      axios.get('/items/menu-items')
-      .then( response => {
-          this.setState({ menuItems: response.data });
+      this.addItemService.fetchMenuItems()
+      .then ( res => {
+        this.setState({ menuItems: res.data });
       })
-      .catch( error => {
-          console.log(error);
+      .catch( err => {
+        console.log(err);
       });
     }
 
@@ -108,23 +90,12 @@ class ItemsList extends Component {
         }
     }
 
-    // Retrieves updated items with menuItem: true from db items collection when item is removed from menu
-    handleMenuItemDelete(){
-        axios.get('/items/menu-items')
-        .then( response => {
-            this.setState({ menuItems: response.data });
-        })
-        .catch( error => {
-            console.log(error);
-        });
-    };
-
     // Creates table rows with this.state.menuItems
     currentMenuRow () {
         if(this.state.menuItems instanceof Array) {
             return this.state.menuItems.map( (object, i) => {
                 // return <MenuItem obj={object} key={i} onChange={this.handleChange} onDelete={this.handleDelete} />;
-                return <CurrentMenuItemRow obj={object} key={i} onDelete={this.handleMenuItemDelete} />;
+                return <CurrentMenuItemRow obj={object} key={i} onDelete={this.updateCurrentMenu} />;
             });
         }
     }
@@ -146,7 +117,6 @@ class ItemsList extends Component {
           <table className='items-table'>
             <thead>
               <tr>
-                {/* <th>Add to Menu</th> */}
                 <th></th>
                 <th><button onClick={this.handleSort} name='item'>Item</button></th>
                 <th>
