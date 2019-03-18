@@ -146,7 +146,7 @@ body {
   background-position: center;
   background-size: cover;
   color: white;
-  max-width: 50%;
+  max-width: 75%;
   margin: 0 auto;
   padding: 1em .15em;
   -moz-box-shadow: inset 0 0 10px #000000;
@@ -163,7 +163,12 @@ body {
     text-align: left;
     font-family: "Caveat", cursive;
     font-size: 1.25em;
-    min-width: 55%; }
+    min-width: 55%;
+    border-collapse: collapse; }
+    #current-menu-container table tr td {
+      border-bottom: .025em dashed white; }
+    #current-menu-container table tr:last-child td {
+      border-bottom: none; }
   #current-menu-container .btn-current-menu-delete {
     background-color: transparent;
     border: none;
@@ -189,13 +194,14 @@ body {
   .items-table tbody {
     font-weight: 300; }
     .items-table tbody tr td {
-      white-space: nowrap;
       border-bottom: .1em solid gray; }
       .items-table tbody tr td .btn-item-row {
         color: black;
         background: none;
         border: none;
         cursor: pointer; }
+    .items-table tbody tr:last-child td {
+      border-bottom: none; }
 
 #total-carbs-desired-form {
   margin: .75em 0; }
