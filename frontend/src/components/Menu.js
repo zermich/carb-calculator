@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import axios from 'axios';
 
 import ItemService from '../components/ItemService';
 import MenuItem from '../components/MenuItem';
@@ -23,10 +22,9 @@ class Menu extends Component {
 
 
     componentDidMount(){
-        axios.get('/items/menu-items')
+        this.addItemService.fetchMenuItems()
         .then( response => {
             this.setState({ items: response.data });
-            // console.log(response.data);
         })
         .catch( error => {
             console.log(error);
@@ -51,7 +49,7 @@ class Menu extends Component {
     }
 
     handleDelete(){
-        axios.get('/items/menu-items')
+        this.addItemService.fetchMenuItems()
         .then( response => {
             this.setState({ items: response.data });
         })
@@ -83,7 +81,7 @@ class Menu extends Component {
                     <input type='number' id='carbsDesired' name='carbsDesired' onChange={this.handleChangeCarbsDesired}/>
                 </div> 
                 {this.tabRow()}
-                <h3 style={{'padding-bottom': '1em'}}>Total Carbs Remaining: {this.state.carbsRemaining}</h3>
+                <h3 style={{'paddingBottom': '1em'}}>Total Carbs Remaining: {this.state.carbsRemaining}</h3>
             </div>
         )
     }

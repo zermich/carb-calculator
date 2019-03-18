@@ -55,7 +55,7 @@ class MenuItem extends Component {
     return (
       <div className='menu-item' style={{background: handleBackgroundColor(this.props.obj.tag)}} >
         <div>
-          <button style={{'margin-top': '1em'}} className='btn-small' onClick={this.handleDelete}>Remove from Menu</button>
+          <button style={{'marginTop': '1em'}} className='btn-small' onClick={this.handleDelete}>Remove from Menu</button>
         </div>
         <h2>{this.props.obj.tag}: {this.props.obj.item}</h2>
         <form>

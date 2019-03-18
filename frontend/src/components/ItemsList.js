@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+// import axios from 'axios';
 
 import ItemService from '../components/ItemService';
 import TableRow from '../components/TableRow';
@@ -24,20 +24,43 @@ class ItemsList extends Component {
 
     componentDidMount(){
       // Retrieves all items items with menuItem true from db items collection
-      axios.all([
-        axios.get('/items'),
-        axios.get('/items/menu-items')
-      ])
-      .then(axios.spread((items, menuItems) => {
-        this.setState({
-          items: items.data,
-          visibleItems: items.data,
-          menuItems: menuItems.data
-        })
-      }))
-      .catch( err => {
-        console.log(err);
-      });
+      // axios.all([
+      //   axios.get('/items'),
+      //   axios.get('/items/menu-items')
+      // ])
+      // .then(axios.spread((items, menuItems) => {
+      //   this.setState({
+      //     items: items.data,
+      //     visibleItems: items.data,
+      //     menuItems: menuItems.data
+      //   })
+      // }))
+      // .catch( err => {
+      //   console.log(err);
+      // });
+
+      // Retrieves all items from db items collection
+      this.addItemService.fetchAllItems()
+          .then( res => {
+            this.setState({
+              items: res.data,
+              visibleItems: res.data
+            })
+          })
+          .catch( err => {
+            console.log(err);
+          });
+
+      // Retrieves all items with menuItem: true from db items collection
+      this.addItemService.fetchMenuItems()
+          .then( res => {
+            this.setState({
+              menuItems: res.data
+            })
+          })
+          .catch( err => {
+            console.log(err);
+          });
     }
 
     // On Item header click sorts table rows by item name
