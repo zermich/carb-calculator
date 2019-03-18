@@ -18,6 +18,14 @@ class ItemService {
         });
     }
 
+    // Retrieves item data by id from db items collection
+    fetchItemData(id, callback) {
+        return axios.post(`/items/fetch`, {itemId: id})
+        .catch(err => {
+            console.log(err);
+        });
+    }
+
     // Posts new items to db items collection
     sendNewItemData(data, callback) {
         return axios.post(`/items/new-item`, {
@@ -36,15 +44,17 @@ class ItemService {
     }
 
     // Updates item in db items collection
-    updateData(data, id) {
-        return axios.put(`/items/`+id, {
+    updateItemData(data, id, successCallback) {
+        return axios.put(`/items/${id}`, {
             item: data.item,
             tag: data.tag,
             servingSize: data.servingSize,
             measure: data.measure,
             carbs: data.carbs
         })
-        .then( res => console.log(res));
+        .then( res=> {
+            successCallback(res);
+        });
     }
 
     // Toggles menuItem value to display/delete from Menu view

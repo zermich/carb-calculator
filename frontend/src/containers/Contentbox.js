@@ -23,7 +23,7 @@ class Contentbox extends Component {
                   <Route exact path='/' component={Calculator} />
                   <Route path='/all-items' component={ItemsList} />
                   <Route path='/new-item' component={NewItem} />
-                  <Route path='/edit/>:id/' component={EditItem} />
+                  <Route path='/edit/:id/' component={EditItem} />
                   <Route path='/menu' component={Menu} />
                 </Switch>
               </div>
