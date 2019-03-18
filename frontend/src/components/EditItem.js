@@ -54,8 +54,8 @@ class EditItem extends Component {
   render() {
     return (
 
-        <div className='new-item-container'>
-            <h2>Edit Item</h2>
+        <div className='content-container'>
+            <h2 className='content-header'>Edit Item</h2>
             <form onSubmit={this.handleSubmit}>
                 <div className='form-row'>
                     <label htmlFor='item'>Item Name&#58;</label>
@@ -90,8 +90,8 @@ class EditItem extends Component {
                     <label htmlFor='carbs'>Carbs&#58;</label>
                     <input type='number' id='carbs' name='carbs' defaultValue={this.state.carbs} onChange={this.handleChange} />
                 </div>
-                <div className='button'>
-                    <button type='submit'>Update Item</button>
+                <div>
+                    <button className='form-submit-button' type='submit'>Update Item</button>
                 </div>
             </form>
         </div>
