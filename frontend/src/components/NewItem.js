@@ -40,12 +40,12 @@ class NewItem extends Component {
           <div className='form-row'>
             <label htmlFor='tag'>Tag&#58;</label>
             <select name='tag' onChange={this.handleChange}>
-                <option value='fruit'>Fruit</option>
-                <option value='protein'>Protein</option>
-                <option value='vegetable'>Vegetable</option>
-                <option value='dessert'>Dessert</option>
-              </select>
-            {/* <input type='text' id='tag' name='tag' onChange={this.handleChange} /> */}
+              <option value='fruit'>Fruit</option>
+              <option value='protein'>Protein</option>
+              <option value='vegetable'>Vegetable</option>
+              <option value='dessert'>Dessert</option>
+              <option value='misc'>Misc</option>
+            </select>
           </div>
           <div className='form-row'>
             <label htmlFor='serving-size'>Serving Size&#58;</label>
@@ -54,10 +54,9 @@ class NewItem extends Component {
           <div className='form-row'>
             <label htmlFor='measure'>Measure&#58;</label>
             <select name='measure' onChange={this.handleChange}>
-                <option value='g'>Grams</option>
-                <option value='oz'>Ounces</option>
-              </select>
-            {/* <input type='text' id='measure' name='measure' onChange={this.handleChange} /> */}
+              <option value='g'>Grams</option>
+              <option value='oz'>Ounces</option>
+            </select>
           </div>
           <div className='form-row'>
             <label htmlFor='carbs'>Carbs&#58;</label>
