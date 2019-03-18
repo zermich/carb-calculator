@@ -18,6 +18,7 @@ class ItemService {
         });
     }
 
+    // Retrieves all items with menuItem: true from db items collection
     fetchMenuItems() {
         return axios.get(`/items/menu-items`)
         .catch(err => {
@@ -50,7 +51,8 @@ class ItemService {
             servingSize: data.servingSize,
             measure: data.measure,
             carbs: data.carbs
-        });
+        })
+        .then( res => console.log(res));
     }
 
     // Toggles menuItem value to display/delete from Menu view

@@ -12,6 +12,8 @@ const port = '3000';
 const api = '/carbcalc-api';
 const prefix = `${protocol}${ip}:${port}${api}`;
 
+const local = `http://localhost:3000`;
+
 axios.defaults.baseURL = prefix;
 
 ReactDOM.render(<App />, document.getElementById('root'));
