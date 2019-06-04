@@ -42,9 +42,14 @@ class ItemsList extends Component {
       // Retrieves all items from db items collection
       this.addItemService.fetchAllItems()
           .then( res => {
+            const allItems = res.data.sort((a, b) => {
+              let textA = a[tag].toLowerCase();
+              let textB = b[tag].toLowerCase();
+              return (textA < textB) ? -1 : (textA > textB) ? 1: 0;
+            });
             this.setState({
-              items: res.data,
-              visibleItems: res.data
+              items: allItems,
+              visibleItems: allItems
             })
           })
           .catch( err => {
