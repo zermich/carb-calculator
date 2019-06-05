@@ -112,9 +112,10 @@ class ItemsList extends Component {
             let textB = b["tag"].toLowerCase();
             return (textA < textB) ? -1 : (textA > textB) ? 1: 0;
           });
-            return itemsSort.map( (object, i) => {
-                return <TableRow obj={object} key={i} onMenuItemAdd={this.updateCurrentMenu}/>;
-            });
+
+          return itemsSort.map( (object, i) => {
+              return <TableRow obj={object} key={i} onMenuItemAdd={this.updateCurrentMenu}/>;
+          });
         }
     }
 
