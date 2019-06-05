@@ -107,7 +107,12 @@ class ItemsList extends Component {
     // Creates table rows with this.state.visibleItems
     tabRow(){
         if(this.state.items instanceof Array){
-            return this.state.visibleItems.map( (object, i) => {
+          const itemsSort = this.state.visibleItems.sort((a, b) => {
+            let textA = a["tag"].toLowerCase();
+            let textB = b["tag"].toLowerCase();
+            return (textA < textB) ? -1 : (textA > textB) ? 1: 0;
+          });
+            return itemsSort.map( (object, i) => {
                 return <TableRow obj={object} key={i} onMenuItemAdd={this.updateCurrentMenu}/>;
             });
         }

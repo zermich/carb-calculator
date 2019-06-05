@@ -14,7 +14,7 @@ const prefix = `${protocol}${ip}:${port}${api}`;
 
 const local = `${protocol}localhost:${port}${api}`;
 
-axios.defaults.baseURL = prefix;
+axios.defaults.baseURL = local;
 
 ReactDOM.render(<App />, document.getElementById('root'));
 registerServiceWorker();
