@@ -46,6 +46,14 @@
   border-bottom: none;
 }
 
+#search-form {
+  margin-top: 2em;
+}
+
+#search-form input {
+  padding: .5em 1em;
+}
+
 .items-table {
   margin: 0 auto;
   text-align: left;
@@ -224,6 +232,7 @@ body {
   min-width: 50%;
   max-width: 1000px;
   background-color: rgba(255, 255, 255, 0.85);
+  padding-bottom: 2em;
 }
 
 @media (min-width: 600px) {

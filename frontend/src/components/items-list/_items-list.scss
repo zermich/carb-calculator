@@ -35,15 +35,13 @@
       }
     }
   }
-  // .btn-current-menu-delete {
-  //   background-color: transparent;
-  //   border: none;
-  //   color: white;
-  //   font-family: $caveat;
-  //   text-decoration: none;
-  //   cursor: pointer;
-  //   font-size: .75em;
-  // }
+}
+
+#search-form {
+  margin-top: 2em;
+  input {
+    padding: .5em 1em;
+  }
 }
 
 .items-table {

@@ -140,7 +140,7 @@ class ItemsList extends Component {
             </table>
           </div>
 
-          <form>
+          <form id='search-form'>
             <input
               placeholder="Search for..."
               ref={input => this.search = input}
