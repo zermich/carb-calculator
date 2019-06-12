@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 // import axios from 'axios';
 
 import ItemService from '../ItemService';
-import TableRow from '../table-row/TableRow';
-import CurrentMenuItemRow from '../current-menu-item-row/CurrentMenuItemRow';
+import TableRow from './table-row/TableRow';
+import CurrentMenuItemRow from './current-menu-item-row/CurrentMenuItemRow';
 
 
 class ItemsList extends Component {
