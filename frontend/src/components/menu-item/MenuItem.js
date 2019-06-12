@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ItemService from '../components/ItemService';
+import ItemService from '../ItemService';
 
 class MenuItem extends Component {
   constructor(props) {

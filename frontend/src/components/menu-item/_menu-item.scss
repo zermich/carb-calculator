@@ -1,0 +1,16 @@
+.menu-item {
+    padding: .25em 0;
+    max-width: 65%;
+    margin: 0 auto;
+    margin-bottom: 1em;
+    font-size: .85em;
+    form {
+      margin-bottom: .65em;
+      .form-row {
+        margin: 0;
+      } 
+    }
+    p {
+      margin-top: .15em;
+    }
+}

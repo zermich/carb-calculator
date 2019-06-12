@@ -1,0 +1,83 @@
+#current-menu-container {
+  border: 1em solid #3e1c00;
+  background-image: url('../images/blackboard.jpg');
+  background-position: center;
+  background-size: cover;
+  color: white;
+  max-width: 75%;
+  margin: 0 auto;
+  padding: 1em .15em;
+  -moz-box-shadow:    inset 0 0 10px #000000;
+   -webkit-box-shadow: inset 0 0 10px #000000;
+   box-shadow:         inset 0 0 10px #000000;
+  h3 {
+    margin-top: 0;
+    font-family: $caveat;
+    text-transform: uppercase;
+    letter-spacing: .1em;
+    font-weight: regular;
+  }
+  table {
+    margin: 0 auto;
+    text-align: left;
+    font-family: $caveat;
+    font-size: 1.25em;
+    min-width: 55%;
+    border-collapse: collapse;
+    tr {
+      td {
+        border-bottom: .025em dashed white;
+      }
+    }
+    tr:last-child {
+      td {
+        border-bottom: none;
+      }
+    }
+  }
+  // .btn-current-menu-delete {
+  //   background-color: transparent;
+  //   border: none;
+  //   color: white;
+  //   font-family: $caveat;
+  //   text-decoration: none;
+  //   cursor: pointer;
+  //   font-size: .75em;
+  // }
+}
+
+.items-table {
+    margin: 0 auto;
+    text-align: left;
+    min-width: 50%;
+    border-collapse: collapse;
+    thead, th, button, select {
+      font-size: .75em;
+      text-transform: uppercase;
+      background: none;
+      border: none;
+      font-family: $monty;
+      font-weight: 300;
+      letter-spacing: .05em;
+    }
+    tbody {
+      font-weight: 300;
+      tr {
+        td {
+          // white-space: nowrap;
+          border-bottom: .1em solid gray;
+          .btn-item-row {
+            color: black;
+            background: none;
+            border: none;
+            cursor: pointer;
+          }
+        }
+      }
+      tr:last-child {
+        td {
+          border-bottom: none;
+        }
+      }
+    }
+  }

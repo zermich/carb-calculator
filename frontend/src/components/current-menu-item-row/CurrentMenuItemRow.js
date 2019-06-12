@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-import ItemService from '../components/ItemService';
+import ItemService from '../ItemService';
 
 class CurrentMenuItemRow extends Component {
 

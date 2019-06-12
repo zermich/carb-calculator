@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 
-import Calculator from '../components/Calculator';
-import ItemsList from '../components/ItemsList';
-import NewItem from '../components/NewItem';
-import EditItem from '../components/EditItem';
-import Navbar from '../components/Navbar';
-import Menu from '../components/Menu';
+import Calculator from '../components/calculator/Calculator';
+import ItemsList from '../components/items-list/ItemsList';
+import NewItem from '../components/new-item/NewItem';
+import EditItem from '../components/edit-item/EditItem';
+import Navbar from '../components/navbar/Navbar';
+import Menu from '../components/menu/Menu';
 
 class Contentbox extends Component {
   render() {

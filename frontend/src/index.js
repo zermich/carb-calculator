@@ -1,7 +1,6 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import './containers/css/main.css'
+import './scss/main.css';
 import App from './containers/App';
 import registerServiceWorker from './registerServiceWorker';
 import axios from 'axios';

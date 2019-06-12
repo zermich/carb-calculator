@@ -1,0 +1,11 @@
+@import '../../scss/vars';
+
+.btn-current-menu-delete {
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: $caveat;
+    text-decoration: none;
+    cursor: pointer;
+    font-size: .75em;
+}
