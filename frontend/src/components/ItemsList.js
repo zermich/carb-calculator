@@ -11,7 +11,7 @@ class ItemsList extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            items: '',
+            items: [],
             sortBy: '',
             visibleItems: [],
             menuItems: ''
@@ -19,26 +19,11 @@ class ItemsList extends Component {
         this.addItemService = new ItemService();
         this.handleSort = this.handleSort.bind(this);
         this.handleFilter = this.handleFilter.bind(this);
+        this.handleInputChange = this.handleInputChange.bind(this);
         this.updateCurrentMenu = this.updateCurrentMenu.bind(this);
     }
 
     componentDidMount(){
-      // Retrieves all items items with menuItem true from db items collection
-      // axios.all([
-      //   axios.get('/items'),
-      //   axios.get('/items/menu-items')
-      // ])
-      // .then(axios.spread((items, menuItems) => {
-      //   this.setState({
-      //     items: items.data,
-      //     visibleItems: items.data,
-      //     menuItems: menuItems.data
-      //   })
-      // }))
-      // .catch( err => {
-      //   console.log(err);
-      // });
-
       // Retrieves all items from db items collection
       this.addItemService.fetchAllItems()
           .then( res => {
@@ -93,6 +78,19 @@ class ItemsList extends Component {
       }
     }
 
+    handleInputChange() {
+      var searchedItems = this.state.items.filter( el => {
+        return el.item.toLowerCase().indexOf(this.search.value.toLowerCase()) !== -1;
+        // return el.item.toLowerCase();
+      });
+
+      // const muggle = this.state.items[2].name;
+      // const squib = muggle.toLowerCase();
+      this.setState({
+        visibleItems: searchedItems
+      })
+    }
+
     // Retrieves updated items with menuItem: true from db items collection when item is added to/removed from menu
     updateCurrentMenu() {
       this.addItemService.fetchMenuItems()
@@ -142,6 +140,13 @@ class ItemsList extends Component {
             </table>
           </div>
 
+          <form>
+            <input
+              placeholder="Search for..."
+              ref={input => this.search = input}
+              onChange={this.handleInputChange}
+            />
+          </form>
 
           <table className='items-table'>
             <thead>
