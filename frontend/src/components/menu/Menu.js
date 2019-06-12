@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 
 import ItemService from '../ItemService';
-import MenuItem from '../menu-item/MenuItem';
+import MenuItem from './menu-item/MenuItem';
 
 class Menu extends Component {
 
